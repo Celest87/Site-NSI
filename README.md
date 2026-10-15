@@ -10,7 +10,7 @@
 
 - 2 pages distinctes avec liens :
     -- sur 1 :
-        --- titre, photo ou video, ol ou ul, tableau, liens externes internes, lien image, contenu aevc indication source de reference, lien vers un element de la meme page.
+        --- (ol ou ul, tableau), (lien image), (contenu avec indication source de reference), (lien ancre vers un element de la meme page).
 
 - Le site doit contenir :
     -- schemas sons videos meteo temp etc.

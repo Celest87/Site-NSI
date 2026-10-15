@@ -9,9 +9,22 @@
 		<body>
 			<h1>L'impact de l'IA sur les métiers de l'informatique</h1>
 			<p>
+				
 				Pour plus de précisions, <a href="https://site-nsi.gaillochonpaul.workers.dev/contenu1">cliquer ici</a>
 				<img src="image.jpg" alt="img_ia">
 
 			</p>
+			<p>Nombre de clics : <span id="compteur">0</span></p>
+			<script>
+    			let clics = 0;
+
+    			document.getElementById("bouton").addEventListener("click", function() {
+        		clics = clics + 1;
+        		document.getElementById("compteur").textContent = clics;
+    			});
+			</script>
 		</body>
 	</html>
+
+<button id="bouton">Clique-moi</button>
+
