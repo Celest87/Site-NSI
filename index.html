@@ -15,6 +15,7 @@
 
 			</p>
 			<p>Nombre de clics : <span id="compteur">0</span></p>
+			<button id="bouton">Clique-moi</button>
 			<script>
     			let clics = 0;
 
@@ -22,6 +23,17 @@
         		clics = clics + 1;
         		document.getElementById("compteur").textContent = clics;
     			});
+			</script>
+
+			<p>Temps passé sur la page : <span id="temps">0</span> secondes</p>
+
+			<script>
+				let secondes = 0;
+
+				setInterval(function() {
+    			secondes = secondes + 1;
+    			document.getElementById("temps").textContent = secondes;
+				}, 1000);
 			</script>
 		</body>
 	</html>
