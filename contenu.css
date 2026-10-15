@@ -1,0 +1,47 @@
+*{
+	font-family: Roboto;
+	background-color: #FFFFAA;
+}
+
+.pol{
+	width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12%;
+}
+
+.comp{
+	text-align: center;
+	max-width: 600px;
+	margin: auto;
+	align-items: center;
+}
+
+#home{
+	width: 75px;
+	height: 75px;
+	object-fit: cover;
+}
+
+h1{
+	text-align: center;
+	color: #0677F0;
+}
+
+h2{
+	text-align: center;
+	color: #7F06F0;
+}	
+#phare{
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 21px;
+}
+
+
+.pages{
+	text-decoration: none;
+	font-size: 21px;
+	text-align: center;
+	align-items: center;
+	margin: auto;
+}
