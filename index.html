@@ -2,59 +2,11 @@
 	<html>
 		<head>
 			<meta charset="utf-8"/>
-			<title>Site web</title>
+			<title>Projet NSI IA</title>
 			<link rel="stylesheet" type="text/css" href="contenu.css">
 		</head>
 
 		<body>
 
-			<script>
-				function affichenom() {
-					var entvalp = document.getElementById("prenom").value;
-					var genre = "";
-
-					if (document.querySelector('input[value="homme"]').checked) {
-						genre = "Monsieur ";
-					}
-					if (document.querySelector('input[value="femme"]').checked) {
-						genre = "Madame ";
-					}
-
-					document.getElementById("name_js").innerHTML = "Bonjour " + genre + entvalp + " !";
-				}
-			</script>
-
-			<h1>Site web</h1>
-			<h2 id="name_js">Bonjour cher visiteur !</h2>
-
-			<p>
-				Moi c'est Paul, 1G2.<br>
-				<img alt="image" src="img.jpg" class="pol"/> <br>
-				Fan incontesté de jeux vidéos divers et variés ainsi que de hardware et constructions de pc.
-			</p>
-
-			<p id="phare">
-				Passionné par ce dernier, j'aimerais vous faire découvrir le monde de l'hardware.<br>
-				En <a href="contenu1.html">Page 1</a>, je présente les différents composants.<br>
-				En <a href="contenu2.html">Page 2</a>, je propose une configuration type.
-			</p>
-
-			<p>
-				Avant de visiter ce site, complète le formulaire pour qu'on fasse un peu connaissance.
-			</p>
-
-			<form method="get" action="">
-				<label>Nom :</label> <input type="text" name="nom" />
-				<label>Prénom :</label> <input type="text" name="prenom" id="prenom"/> <br><br>
-				<label>Genre :</label>
-				<input type="radio" name="genre" value="homme"> Homme
-				<input type="radio" name="genre" value="femme"> Femme
-				<input type="radio" name="genre" value="nr"> Non renseigné
-				<br><br>
-
-				<button type="button" onclick="affichenom()">Envoyer</button>
-			</form> <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br>
-			
-			<p class="pages"><a href="" class="pages">1</a> <a href="" class="pages">...</a> <a href="contenu1.html" class="pages">-></a></p>
 		</body>
 	</html>
