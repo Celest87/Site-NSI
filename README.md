@@ -100,3 +100,7 @@ Deuxième page :
     - Centre les titres des colonnes dans le tableau
     - Mettre la conclusion en bas de la page et l'enrichir
     - Rajouter les sources de nos informations et préciser si possible quand on a utilisé l'ia (en mentant, un peu, si besoin)
+
+Aussi :
+
+    - Rajoute plus de commentaires
