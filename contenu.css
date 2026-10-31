@@ -5,15 +5,18 @@ body {
     padding: 20px;
     line-height: 1.7;
     color: #eaf7ff;
+    /* Plusieurs dégradés superposés créent des halos lumineux sur le fond sombre. */
     background:
         radial-gradient(circle at 20% 20%, rgba(86, 190, 255, 0.3), transparent 20%),
         radial-gradient(circle at 80% 10%, rgba(85, 255, 196, 0.25), transparent 25%),
         radial-gradient(circle at 50% 80%, rgba(123, 92, 255, 0.22), transparent 30%),
         linear-gradient(135deg, #071018, #0d1c2d, #111827);
     background-size: 200% 200%;
+    /* L'animation déplace lentement les dégradés pour donner un effet futuriste. */
     animation: animatedBackground 18s ease infinite;
 }
 
+/* Les étapes définissent les positions de départ, milieu et fin de l'animation. */
 @keyframes animatedBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -41,6 +44,7 @@ img {
 }
 
 #maison {
+    /* Positionne la petite icône dans le coin supérieur gauche de la page. */
     position: absolute;
     top: 20px;
     left: 20px;
@@ -90,10 +94,14 @@ button:hover {
 .cache {
     display: none;
     margin-top: 10px;
-    color: #0d5a33;
+    color: #a5f3c1;
+    background: rgba(13, 90, 51, 0.25);
+    padding: 8px;
+    border-radius: 6px;
     font-weight: bold;
 }
 
+/* JavaScript ajoute ou retire cette classe quand on clique sur le bouton. */
 .cache.visible {
     display: block;
 }
@@ -106,6 +114,7 @@ button:hover {
 }
 
 .def {
+    /* La définition se place sous le mot ; elle reste au-dessus des autres blocs. */
     position: absolute;
     left: 0;
     top: 24px;
@@ -120,6 +129,7 @@ button:hover {
 }
 
 .term:hover .def {
+    /* Le survol du terme rend sa définition visible. */
     display: block;
 }
 
