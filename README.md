@@ -10,20 +10,6 @@ Le site comporte deux pages HTML reliées entre elles :
 
 Les éléments facultatifs de la fiche — météo, température, vitesse du vent, sons ou webcam — ne sont pas ajoutés. Le site ne présente ainsi aucune donnée de démonstration comme une information réelle.
 
-## Vérification des consignes
-
-- [x] Deux pages distinctes reliées par des liens.
-- [x] Une seule feuille CSS est partagée par les deux pages.
-- [x] Un titre, une image liée au sujet, une liste, un tableau, des liens internes et externes, une image cliquable, une source et une ancre.
-- [x] Un bloc unique et discret en bas de la deuxième page affiche les clics, le temps passé et les visites.
-- [x] Réponse à la devinette affichée au clic.
-- [x] Définition du terme « IA » affichée au survol.
-- [x] CSS et JavaScript commentés en français.
-- [ ] Pour le dossier de rendu : ajouter l'adresse du site publié, des captures d'écran et un diaporama.
-- [ ] Préparer une présentation orale de cinq minutes par élève.
-
-Le compteur de visites utilise `localStorage` : il compte les ouvertures dans le navigateur courant, pas les visites globales de tous les utilisateurs. Les compteurs de clics et de temps repartent à zéro à chaque chargement de page.
-
 ## Proposition de texte pour l'oral
 
 Bonjour, nous allons vous présenter notre mini-site réalisé pour le projet de NSI. Nous avons choisi comme sujet l'impact de l'intelligence artificielle sur les métiers de l'informatique. L'IA peut aider à écrire du code et à analyser des données, mais elle transforme aussi les tâches et les compétences attendues. Nous avons donc voulu présenter ses possibilités et les points auxquels il faut rester attentif.
@@ -42,7 +28,7 @@ Pour la présentation, nous pouvons montrer d'abord les deux pages et faire les 
 
 Le JavaScript ajoute les interactions et le bloc discret en bas de la deuxième page affiche les compteurs. Le compteur de clics augmente quand on appuie sur son bouton. Le temps passé est actualisé chaque seconde grâce à `setInterval`. Les visites sont enregistrées dans `localStorage`, une mémoire du navigateur qui conserve une valeur après fermeture de la page. Ce compteur est local à un navigateur : il ne représente pas le nombre total de visiteurs du site.
 
-Dans le code, `getElementById` récupère un élément HTML à partir de son identifiant, puis `textContent` change le nombre affiché sans reconstruire toute la page. `Number` transforme la valeur enregistrée sous forme de texte en nombre afin de pouvoir l'incrémenter. La variable `clics` est propre au chargement en cours, tandis que le compteur des visites est sauvegardé. Les deux pages ont des identifiants et des clés de stockage différents pour ne pas mélanger leurs compteurs. Cela permet aussi de discuter d'une limite : effacer les données du navigateur réinitialise les visites enregistrées.
+Dans le code, `getElementById` récupère un élément HTML à partir de son identifiant, puis `textContent` change le nombre affiché sans reconstruire toute la page. `Number` transforme la valeur enregistrée sous forme de texte en nombre afin de pouvoir l'incrémenter. Le compteur de clics et le temps sont propres au chargement en cours, tandis que le compteur de visites est sauvegardé. Cela permet aussi de discuter d'une limite : effacer les données du navigateur réinitialise les visites enregistrées.
 
 La devinette utilise JavaScript pour ajouter ou retirer la classe CSS `visible` quand on clique sur le bouton. La réponse est donc masquée au départ, puis affichée. La définition du mot « IA » utilise une autre méthode : elle apparaît au survol grâce au CSS.
 
@@ -50,13 +36,9 @@ Pour les informations, nous avons ajouté des liens vers des sources sur la déf
 
 Pour conclure, ce projet nous a permis de relier HTML, CSS et JavaScript dans un même site. Il montre que l'IA peut être utile, mais que ses résultats doivent être contrôlés et que son utilisation demande du recul. Merci de votre attention.
 
-## Dossier à remettre
+## Informations à retenir
 
-La fiche demande de remettre un dossier comprenant :
-
-1. l'adresse du site publié ;
-2. des captures d'écran du site ;
-3. un diaporama pour accompagner la présentation orale ;
-4. les scripts du projet, largement commentés.
-
-Nous sommes deux : la présentation orale doit donc durer cinq minutes par élève, soit environ dix minutes au total. Le texte ci-dessus sert de base et peut être partagé entre les deux élèves ; il faut le répéter et l'adapter à votre débit de parole.
+- Le site est publié. Il n'y a pas de tâche de publication restante.
+- Le compteur de visites utilise `localStorage` : il compte les ouvertures dans le navigateur courant, pas les visites globales de tous les utilisateurs.
+- Les compteurs de clics et de temps repartent à zéro à chaque chargement de page.
+- Les informations et les sources doivent être relues et vérifiées par les auteurs du projet.
