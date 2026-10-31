@@ -42,15 +42,6 @@
         </tr>
     </table>
 
-    <!-- Les trois compteurs demandés dans la fiche sont aussi disponibles sur cette page. -->
-    <div class="mini-section compteurs">
-        <h2>Compteurs de la page</h2>
-        <p>Visites sur cette page : <span id="visitesPage2">0</span></p>
-        <p>Clics sur le bouton : <span id="clicsPage2">0</span></p>
-        <p>Temps passé : <span id="tempsPage2">0</span> secondes</p>
-        <button id="boutonPage2">Compter un clic</button>
-    </div>
-
     <!-- Cette ancre peut être ciblée depuis la première page avec #sources. -->
     <div id="sources" class="mini-section sources">
         <h2>Sources et démarche</h2>
@@ -70,6 +61,14 @@
     </div>
 
     <p><a href="index.html">Retour à la première page</a></p>
+
+    <!-- Petit bloc récapitulatif des compteurs, placé discrètement en bas de la deuxième page. -->
+    <aside class="compteurs" aria-label="Compteurs de la page">
+        <span>Visites : <strong id="visitesPage2">0</strong></span>
+        <span>Clics : <strong id="clicsPage2">0</strong></span>
+        <span>Temps : <strong id="tempsPage2">0</strong> s</span>
+        <button id="boutonPage2">+1 clic</button>
+    </aside>
 
     <!-- Script placé à la fin du body : les éléments HTML sont déjà créés lorsqu'il s'exécute. -->
     <script>

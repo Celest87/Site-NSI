@@ -168,6 +168,33 @@ button:hover {
     box-shadow: 0 0 15px rgba(118, 219, 255, 0.08);
 }
 
+.compteurs {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 0;
+    padding: 8px 12px;
+    color: #9ab4c8;
+    background: rgba(14, 24, 35, 0.45);
+    border: 1px solid rgba(127, 180, 255, 0.18);
+    border-radius: 8px;
+    font-size: 0.78rem;
+}
+
+.compteurs strong {
+    color: #c4d6e8;
+}
+
+.compteurs button {
+    padding: 5px 9px;
+    color: #c4d6e8;
+    background: transparent;
+    border: 1px solid rgba(127, 180, 255, 0.25);
+    font-size: 0.75rem;
+}
+
 .source {
     font-style: italic;
     color: #c4d6e8;

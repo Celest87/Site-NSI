@@ -46,14 +46,6 @@
         </div>
     </div>
 
-    <!-- Les identifiants permettent au JavaScript de retrouver et mettre à jour ces nombres. -->
-    <p>Nombre de visites : <span id="visites">0</span></p>
-    <p>Nombre de clics : <span id="compteur">0</span></p>
-    <p>Temps passé : <span id="temps">0</span> secondes</p>
-
-    <!-- Bouton servant d'exemple simple d'interaction et de compteur de clics. -->
-    <button id="bouton">Clique-moi</button>
-
     <!-- La réponse reste dans le HTML mais la classe cache la masque au chargement. -->
     <div class="bloc">
         <p>Quel domaine permet à un ordinateur d'analyser des données et de réaliser des tâches qui demandent habituellement une forme d'intelligence ?</p>
@@ -86,34 +78,11 @@
 
     <!-- Le script est placé en bas pour que les éléments HTML existent déjà au chargement. -->
     <script>
-        let clics = 0;
-        let secondes = 0;
-
-        // localStorage conserve ce compteur dans le navigateur, même après sa fermeture.
-        // Il s'agit donc des visites sur cet appareil, et non d'un compteur commun au site.
-        const visites = Number(localStorage.getItem('visitesPageIA')) || 0;
-        // On affiche la visite suivante puis on la mémorise pour la prochaine ouverture.
-        document.getElementById('visites').textContent = visites + 1;
-        localStorage.setItem('visitesPageIA', visites + 1);
-
-        // addEventListener attend un clic sans interrompre le fonctionnement normal de la page.
-        document.getElementById('bouton').addEventListener('click', function () {
-            clics += 1;
-            document.getElementById('compteur').textContent = clics;
-        });
-
         // La classe CSS visible affiche ou masque la réponse sans supprimer le texte du HTML.
         document.getElementById('revelerReponse').addEventListener('click', function () {
             // La classe CSS visible fait apparaître ou disparaître la réponse.
             document.getElementById('reponse').classList.toggle('visible');
         });
-
-        // setInterval exécute cette fonction toutes les 1000 millisecondes (1 seconde).
-        // Le compteur repart de zéro à chaque rechargement, contrairement au compteur de visites.
-        setInterval(function () {
-            secondes += 1;
-            document.getElementById('temps').textContent = secondes;
-        }, 1000);
     </script>
 </body>
 </html>

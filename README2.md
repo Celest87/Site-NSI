@@ -22,7 +22,7 @@ Ce fichier liste les changements apportés au projet depuis sa première version
 - Définition du terme « IA » visible au survol de la souris.
 - Schéma en quatre étapes : collecte de données, entraînement, résultat, évaluation et amélioration.
 - Lien vers les sources présentées sur la deuxième page.
-- Compteurs de visites, de clics et de temps passé.
+- Réponse de la devinette révélée au clic.
 - Script JavaScript placé en bas de page et commenté.
 
 ## Deuxième page — `contenu1.html`
@@ -30,7 +30,7 @@ Ce fichier liste les changements apportés au projet depuis sa première version
 - Réécriture des grands paragraphes en sections plus courtes.
 - Présentation des avantages et des points de vigilance de l'IA.
 - Tableau comparatif avec titres de colonnes centrés.
-- Compteurs de visites, de clics et de temps passé sur cette page également.
+- Un unique bloc discret de compteurs (visites, clics et temps), placé en bas de cette page.
 - Références externes sur la définition de l'IA, l'emploi et l'énergie.
 - Mention transparente de l'utilisation d'une IA comme aide au code et à la rédaction.
 - Conclusion enrichie placée à la fin de la page.
@@ -62,6 +62,6 @@ La fiche cite la météo, la température, la vitesse du vent, les sons et les w
 
 ## Limites à connaître
 
-- `localStorage` compte les visites séparément dans chaque navigateur ; ce n'est pas un total partagé entre tous les visiteurs.
+- Le compteur de visites utilise `localStorage` dans le navigateur courant ; ce n'est pas un total partagé entre tous les visiteurs.
 - Les compteurs de clics et de temps repartent à zéro au rechargement de la page.
 - Les informations et les sources doivent être relues et vérifiées par les auteurs du projet.
