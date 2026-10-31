@@ -197,14 +197,3 @@ a {
     text-decoration: none;
     font-weight: bold;
 }
-
-@media (max-width: 600px) {
-    /* Sur téléphone, les deux colonnes deviennent une seule colonne. */
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    table {
-        font-size: 0.85rem;
-    }
-}
