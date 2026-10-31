@@ -3,109 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA & Informatique</title>
+    <title>IA / NSI</title>
     <link rel="stylesheet" href="contenu.css">
 </head>
 <body>
-    <header class="topbar">
-        <div class="brand">NSI / IA</div>
-        <nav>
-            <a href="#intro">Intro</a>
-            <a href="#stats">Stats</a>
-            <a href="#devinette">Dévinette</a>
-            <a href="contenu1.html">Suite</a>
-        </nav>
-    </header>
+    <h1>L'impact de l'IA sur les métiers de l'informatique</h1>
 
-    <main>
-        <section id="intro" class="panel hero">
-            <div>
-                <p class="eyebrow">Projet de terminale NSI</p>
-                <h1>L'impact de l'IA sur les métiers de l'informatique</h1>
-                <p>
-                    L'intelligence artificielle modifie profondément le travail des informaticiens :
-                    elle accélère les tâches, automatise certaines fonctions et transforme aussi
-                    les compétences recherchées dans le secteur.
-                </p>
-                <a class="button" href="contenu1.html">Voir la suite</a>
-            </div>
-            <img src="image.jpg" alt="Illustration IA">
-        </section>
+    <p class="intro">
+        L'intelligence artificielle transforme le travail des informaticiens.
+        Elle permet d'automatiser des tâches, d'analyser des données plus vite,
+        mais aussi de faire évoluer les compétences nécessaires dans le secteur.
+    </p>
 
-        <section id="stats" class="panel">
-            <h2>Quelques indicateurs</h2>
-            <div class="stats">
-                <div class="card">
-                    <span class="label">Visites</span>
-                    <strong id="visites">0</strong>
-                </div>
-                <div class="card">
-                    <span class="label">Clics</span>
-                    <strong id="compteur">0</strong>
-                </div>
-                <div class="card">
-                    <span class="label">Temps</span>
-                    <strong><span id="temps">0</span>s</strong>
-                </div>
-            </div>
-            <button id="bouton" class="button small">Clique-moi</button>
-        </section>
+    <img src="image.jpg" alt="IA">
 
-        <section id="devinette" class="panel">
-            <h2>Dévinette</h2>
-            <p>Quel système apprend à partir de données et repère des motifs sans être entièrement programmé ligne par ligne ?</p>
-            <button id="revelerReponse" class="button small alt">Afficher la réponse</button>
-            <p id="reponse" class="cache">Réponse : l'intelligence artificielle.</p>
-        </section>
+    <p>Nombre de visites : <span id="visites">0</span></p>
+    <p>Nombre de clics : <span id="compteur">0</span></p>
+    <p>Temps passé : <span id="temps">0</span> secondes</p>
 
-        <section class="panel">
-            <h2>Définition</h2>
-            <p>
-                Le mot <span class="term">IA<span class="def">L'intelligence artificielle désigne des systèmes capables d'apprendre, d'analyser des données et de faire des prédictions.</span></span>
-                désigne maintenant une réalité centrale dans le numérique.
-            </p>
-        </section>
+    <button id="bouton">Clique-moi</button>
 
-        <section class="panel">
-            <h2>Schéma simple</h2>
-            <div class="schema">
-                <span>Données</span>
-                <span>→</span>
-                <span>Modèle</span>
-                <span>→</span>
-                <span>Décision</span>
-            </div>
-        </section>
-    </main>
+    <div class="bloc">
+        <p>Réponse à la devinette :</p>
+        <button id="revelerReponse">Afficher</button>
+        <p id="reponse" class="cache">La réponse est : l'intelligence artificielle.</p>
+    </div>
+
+    <p>
+        Le mot <span class="term">IA<span class="def">L'intelligence artificielle désigne des systèmes capables d'apprendre et de traiter des données.</span></span>
+        est au cœur de nombreux outils numériques.
+    </p>
+
+    <a href="contenu1.html">Page suivante</a>
 
     <script>
         let clics = 0;
         let secondes = 0;
 
-        const compteur = document.getElementById('compteur');
-        const temps = document.getElementById('temps');
-        const bouton = document.getElementById('bouton');
-        const boutonReponse = document.getElementById('revelerReponse');
-        const reponse = document.getElementById('reponse');
-
         const visites = Number(localStorage.getItem('visitesPageIA')) || 0;
-        const visitesElement = document.getElementById('visites');
-        const nouvellesVisites = visites + 1;
-        localStorage.setItem('visitesPageIA', nouvellesVisites);
-        visitesElement.textContent = nouvellesVisites;
+        document.getElementById('visites').textContent = visites + 1;
+        localStorage.setItem('visitesPageIA', visites + 1);
 
-        bouton.addEventListener('click', function () {
+        document.getElementById('bouton').addEventListener('click', function () {
             clics += 1;
-            compteur.textContent = clics;
+            document.getElementById('compteur').textContent = clics;
         });
 
-        boutonReponse.addEventListener('click', function () {
-            reponse.classList.toggle('visible');
+        document.getElementById('revelerReponse').addEventListener('click', function () {
+            document.getElementById('reponse').classList.toggle('visible');
         });
 
         setInterval(function () {
             secondes += 1;
-            temps.textContent = secondes;
+            document.getElementById('temps').textContent = secondes;
         }, 1000);
     </script>
 </body>
