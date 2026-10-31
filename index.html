@@ -17,7 +17,9 @@
         Elle a ses avantages et ses inconvénients, et il est crucial de comprendre son impact sur le monde du travail.  
     </p>
 
-    <img src="image.jpg" alt="IA">
+    <a href="contenu1.html">
+        <img class="illustration" src="image.jpg" alt="Illustration sur l'intelligence artificielle, cliquer pour consulter la suite">
+    </a>
 
     <ul class="liste">
         <li>Automation des tâches répétitives</li>
@@ -46,7 +48,7 @@
     <button id="bouton">Clique-moi</button>
 
     <div class="bloc">
-        <p>Réponse à la devinette :</p>
+        <p>Quel domaine permet à un ordinateur d'analyser des données et de réaliser des tâches qui demandent habituellement une forme d'intelligence ?</p>
         <button id="revelerReponse">Afficher</button>
         <p id="reponse" class="cache">La réponse est : l'intelligence artificielle.</p>
     </div>
@@ -58,8 +60,16 @@
     </p>
 
     <div id="details" class="mini-section">
-        <h2>Schéma simple</h2>
-        <p>Données → Modèle IA → Décision → Amélioration continue</p>
+        <h2>Comment fonctionne une IA ?</h2>
+        <p>Un exemple simplifié en quatre étapes :</p>
+        <!-- Cette liste numérotée sert de support visuel pour expliquer le processus à l'oral. -->
+        <ol class="schema">
+            <li><strong>Collecter des données</strong> : textes, images ou mesures servent d'exemples.</li>
+            <li><strong>Entraîner un modèle</strong> : l'algorithme repère des régularités dans ces exemples.</li>
+            <li><strong>Produire un résultat</strong> : le modèle répond à une demande ou classe une donnée.</li>
+            <li><strong>Évaluer et améliorer</strong> : on vérifie les résultats et on corrige les erreurs.</li>
+        </ol>
+        <p>Ce schéma reste simplifié : les méthodes varient selon le type d'intelligence artificielle.</p>
     </div>
 
     <div class="mini-section weather">
@@ -67,22 +77,7 @@
         <p>Paris — 20°C — Ensoleillé</p>
     </div>
 
-    <div class="mini-section">
-        <h2>Vidéo</h2>
-        <iframe
-            src="https://www.youtube.com/embed/2ePf9rue1Ao"
-            width="100%"
-            height="440"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <div class="mini-section">
-        <h2>Conclusion</h2>
-        <p>L'IA ne remplace pas totalement les humains, mais elle transforme les métiers du numérique en changeant les compétences recherchées et en accélérant la production.</p>
-    </div>
-
-    <p class="source">Source : <a href="https://www.orange.com/fr/actualites/ia/definition-intelligence-artificielle">Orange</a></p>
+    <p class="source">Sources des informations : <a href="contenu1.html#sources">voir les références sur la deuxième page</a>.</p>
 
     <a href="contenu1.html">Page suivante</a>
 
@@ -101,12 +96,14 @@
             document.getElementById('compteur').textContent = clics;
         });
 
+        // La classe CSS visible affiche ou masque la réponse sans supprimer le texte du HTML.
         document.getElementById('revelerReponse').addEventListener('click', function () {
             // La classe CSS visible fait apparaître ou disparaître la réponse.
             document.getElementById('reponse').classList.toggle('visible');
         });
 
         // setInterval exécute cette fonction toutes les 1000 millisecondes (1 seconde).
+        // Le compteur repart de zéro à chaque rechargement, contrairement au compteur de visites.
         setInterval(function () {
             secondes += 1;
             document.getElementById('temps').textContent = secondes;
