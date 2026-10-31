@@ -6,15 +6,14 @@ Le site comporte deux pages HTML reliées entre elles :
 
 - `index.html` présente le sujet, une liste, une image cliquable, une ancre, une devinette et un schéma explicatif.
 - `contenu1.html` développe les avantages et les points de vigilance, avec un tableau, les sources et une conclusion.
-- `contenu.css` contient le style commun et la première feuille de style.
-- `contenu2.css` est la feuille du deuxième élève : elle importe le style commun et ajoute des styles propres à la deuxième page.
+- `contenu.css` contient la mise en forme commune aux deux pages.
 
 Les éléments facultatifs de la fiche — météo, température, vitesse du vent, sons ou webcam — ne sont pas ajoutés. Le site ne présente ainsi aucune donnée de démonstration comme une information réelle.
 
 ## Vérification des consignes
 
 - [x] Deux pages distinctes reliées par des liens.
-- [x] Deux feuilles CSS pour deux élèves ; le style commun est réutilisé et chaque feuille contribue à la mise en forme.
+- [x] Une seule feuille CSS est partagée par les deux pages.
 - [x] Un titre, une image liée au sujet, une liste, un tableau, des liens internes et externes, une image cliquable, une source et une ancre.
 - [x] Compteur de clics, temps passé et visites sur chacune des pages.
 - [x] Réponse à la devinette affichée au clic.
@@ -37,7 +36,7 @@ La deuxième page détaille les avantages et les points de vigilance. L'IA peut 
 
 Nous avons utilisé HTML pour structurer le contenu. Les balises `<h1>` et `<h2>` organisent les titres, `<p>` les paragraphes, `<ul>` ou `<ol>` les listes et `<table>` le tableau. La balise `<a>` crée des liens, tandis que `<img>` affiche une image. L'attribut `alt` décrit cette image si elle ne s'affiche pas ou pour les outils d'accessibilité. Les identifiants `id` servent à cibler un élément précis, et les classes `class` permettent d'appliquer les mêmes styles à plusieurs éléments.
 
-Le fichier `contenu.css` définit le style commun des deux pages. Il règle notamment la police, les couleurs, les marges, les bordures, les tailles et les espacements. Le fond sombre est composé de plusieurs dégradés, et une animation les déplace lentement. Les sélecteurs comme `h1` ciblent une balise, `.mini-section` cible une classe et `#maison` cible un identifiant. Le sélecteur `:hover` permet d'appliquer un style quand le pointeur passe sur un élément. Une règle `@media` adapte la présentation aux petits écrans. Comme nous sommes deux, `contenu2.css` importe les règles communes avec `@import`, puis ajoute une alternance légère de couleur aux lignes du tableau et une couleur aux titres de section. Cette organisation évite de recopier toutes les règles communes dans un deuxième fichier.
+Le fichier `contenu.css` définit le style commun des deux pages. Il règle notamment la police, les couleurs, les marges, les bordures, les tailles et les espacements. Le fond sombre est composé de plusieurs dégradés, et une animation les déplace lentement. Les sélecteurs comme `h1` ciblent une balise, `.mini-section` cible une classe et `#maison` cible un identifiant. Le sélecteur `:hover` permet d'appliquer un style quand le pointeur passe sur un élément. Une règle `@media` adapte la présentation aux petits écrans.
 
 Pour la présentation, nous pouvons montrer d'abord les deux pages et faire les actions en direct : cliquer sur l'image pour naviguer, utiliser le lien ancre, révéler la réponse et passer la souris sur « IA ». Nous pouvons ensuite montrer les compteurs, le tableau et les sources. Ces démonstrations permettent de vérifier que le site ne contient pas seulement du texte statique.
 
