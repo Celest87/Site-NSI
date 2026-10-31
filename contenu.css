@@ -1,3 +1,4 @@
+/* Style commun aux deux pages : police, largeur, couleurs et fond animé. */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 900px;
@@ -23,6 +24,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* Le titre principal est centré et éclairé pour ressortir sur le fond sombre. */
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -35,6 +37,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Règles générales des images ; des classes ci-dessous permettent des exceptions. */
 img {
     width: 100%;
     max-height: 280px;
@@ -62,6 +65,7 @@ img {
     border-radius: 6px;
 }
 
+/* La liste utilise un fond clair et un texte foncé pour assurer le contraste. */
 .liste {
     background: #eef3f8;
     color: #1b1b1b;
@@ -70,6 +74,7 @@ img {
     border-radius: 8px;
 }
 
+/* Apparence commune des boutons interactifs. */
 button {
     background: #1f2d3d;
     color: white;
@@ -79,10 +84,12 @@ button {
     cursor: pointer;
 }
 
+/* :hover applique ce style lorsque le pointeur passe sur le bouton. */
 button:hover {
     background: #2d3e52;
 }
 
+/* Grille à deux colonnes utilisée pour juxtaposer les avantages et inconvénients. */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -99,6 +106,7 @@ button:hover {
     margin: 10px 0;
 }
 
+/* Encadré sombre utilisé autour de la question et de sa réponse. */
 .bloc {
     margin: 25px 0;
     padding: 15px;
@@ -122,6 +130,7 @@ button:hover {
     display: block;
 }
 
+/* Le terme sert de point d'ancrage à la définition affichée au survol. */
 .term {
     position: relative;
     font-weight: bold;
@@ -149,6 +158,7 @@ button:hover {
     display: block;
 }
 
+/* Style commun des encadrés de contenu sur les deux pages. */
 .mini-section {
     margin: 25px 0;
     padding: 15px;
@@ -158,23 +168,12 @@ button:hover {
     box-shadow: 0 0 15px rgba(118, 219, 255, 0.08);
 }
 
-.weather {
-    background: rgba(20, 37, 46, 0.9);
-    border-color: rgba(126, 247, 197, 0.5);
-}
-
-iframe {
-    width: 100%;
-    height: 220px;
-    border: none;
-    border-radius: 8px;
-}
-
 .source {
     font-style: italic;
     color: #c4d6e8;
 }
 
+/* Les colonnes occupent la largeur disponible et leurs bordures sont fusionnées. */
 table {
     width: 100%;
     border-collapse: collapse;

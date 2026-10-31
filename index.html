@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="contenu.css">
 </head>
 <body>
+    <!-- Titre principal de la page d'accueil. -->
     <h1>L'impact de l'IA sur les métiers de l'informatique</h1>
 
+    <!-- Introduction et présentation générale du sujet. -->
     <p class="intro">
         L'intelligence artificielle transforme le travail des informaticiens.
         Elle permet d'automatiser des tâches, d'analyser des données plus vite,
@@ -17,10 +19,12 @@
         Elle a ses avantages et ses inconvénients, et il est crucial de comprendre son impact sur le monde du travail.  
     </p>
 
+    <!-- L'image est enveloppée dans un lien : cliquer dessus ouvre la deuxième page. -->
     <a href="contenu1.html">
         <img class="illustration" src="image.jpg" alt="Illustration sur l'intelligence artificielle, cliquer pour consulter la suite">
     </a>
 
+    <!-- Liste non numérotée des principaux changements présentés dans le projet. -->
     <ul class="liste">
         <li>Automation des tâches répétitives</li>
         <li>Analyse rapide des données</li>
@@ -30,6 +34,7 @@
     <!-- Le lien avec #details fait défiler la page jusqu'à l'élément qui porte cet id. -->
     <p><a href="#details">Voir les détails</a></p>
 
+    <!-- La classe grid place les deux encadrés côte à côte sur un écran large. -->
     <div class="grid">
         <div class="mini-section">
             <h2>Avantages</h2>
@@ -41,12 +46,15 @@
         </div>
     </div>
 
+    <!-- Les identifiants permettent au JavaScript de retrouver et mettre à jour ces nombres. -->
     <p>Nombre de visites : <span id="visites">0</span></p>
     <p>Nombre de clics : <span id="compteur">0</span></p>
     <p>Temps passé : <span id="temps">0</span> secondes</p>
 
+    <!-- Bouton servant d'exemple simple d'interaction et de compteur de clics. -->
     <button id="bouton">Clique-moi</button>
 
+    <!-- La réponse reste dans le HTML mais la classe cache la masque au chargement. -->
     <div class="bloc">
         <p>Quel domaine permet à un ordinateur d'analyser des données et de réaliser des tâches qui demandent habituellement une forme d'intelligence ?</p>
         <button id="revelerReponse">Afficher</button>
@@ -72,15 +80,11 @@
         <p>Ce schéma reste simplifié : les méthodes varient selon le type d'intelligence artificielle.</p>
     </div>
 
-    <div class="mini-section weather">
-        <h2>Météo</h2>
-        <p>Paris — 20°C — Ensoleillé</p>
-    </div>
-
     <p class="source">Sources des informations : <a href="contenu1.html#sources">voir les références sur la deuxième page</a>.</p>
 
     <a href="contenu1.html">Page suivante</a>
 
+    <!-- Le script est placé en bas pour que les éléments HTML existent déjà au chargement. -->
     <script>
         let clics = 0;
         let secondes = 0;
@@ -88,9 +92,11 @@
         // localStorage conserve ce compteur dans le navigateur, même après sa fermeture.
         // Il s'agit donc des visites sur cet appareil, et non d'un compteur commun au site.
         const visites = Number(localStorage.getItem('visitesPageIA')) || 0;
+        // On affiche la visite suivante puis on la mémorise pour la prochaine ouverture.
         document.getElementById('visites').textContent = visites + 1;
         localStorage.setItem('visitesPageIA', visites + 1);
 
+        // addEventListener attend un clic sans interrompre le fonctionnement normal de la page.
         document.getElementById('bouton').addEventListener('click', function () {
             clics += 1;
             document.getElementById('compteur').textContent = clics;

@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les effets de l'IA - Projet NSI</title>
-    <link rel="stylesheet" href="contenu.css">
+    <link rel="stylesheet" href="contenu2.css">
 </head>
 <body>
-    <!-- Cette image est un lien cliquable vers la page d'accueil. -->
+    <!-- Cette image est un lien cliquable vers la page d'accueil. L'id maison permet un style distinct. -->
     <a href="index.html"><img id="maison" src="OIP2.png" alt="Retour à l'accueil"></a>
 
     <h1>Les effets de l'IA sur l'informatique</h1>
 
+    <!-- Première partie : usages qui peuvent aider les professionnels. -->
     <div class="mini-section">
         <h2>Les points positifs</h2>
         <p>L'IA peut aider les développeurs à écrire ou vérifier du code plus rapidement. Elle peut aussi analyser beaucoup de données et assister la résolution de problèmes complexes.</p>
         <p>Les métiers évoluent : les informaticiens doivent savoir vérifier les résultats, protéger les données et choisir les outils adaptés.</p>
     </div>
 
+    <!-- Deuxième partie : limites et effets à surveiller. -->
     <div class="mini-section">
         <h2>Les points de vigilance</h2>
         <p>L'automatisation peut transformer certaines tâches et certains emplois. Les résultats d'une IA doivent être vérifiés : ils peuvent être inexacts ou reproduire des biais présents dans les données.</p>
         <p>Les systèmes d'IA nécessitent aussi des équipements comme des serveurs, de la mémoire et des processeurs. Leur fabrication et leur utilisation ont un coût matériel et énergétique.</p>
     </div>
 
-    <!-- Le tableau résume les idées développées dans les deux sections précédentes. -->
+    <!-- Le tableau résume les deux points de vue ; th désigne les cellules d'en-tête. -->
     <table>
         <tr>
             <th>Points positifs</th>
@@ -40,16 +42,16 @@
         </tr>
     </table>
 
-    <div class="mini-section">
-        <h2>Pour aller plus loin</h2>
-        <p>Cette vidéo complète les informations présentées sur le site.</p>
-        <iframe
-            src="https://www.youtube.com/embed/2ePf9rue1Ao"
-            title="Vidéo sur l'intelligence artificielle"
-            allowfullscreen>
-        </iframe>
+    <!-- Les trois compteurs demandés dans la fiche sont aussi disponibles sur cette page. -->
+    <div class="mini-section compteurs">
+        <h2>Compteurs de la page</h2>
+        <p>Visites sur cette page : <span id="visitesPage2">0</span></p>
+        <p>Clics sur le bouton : <span id="clicsPage2">0</span></p>
+        <p>Temps passé : <span id="tempsPage2">0</span> secondes</p>
+        <button id="boutonPage2">Compter un clic</button>
     </div>
 
+    <!-- Cette ancre peut être ciblée depuis la première page avec #sources. -->
     <div id="sources" class="mini-section sources">
         <h2>Sources et démarche</h2>
         <ul>
@@ -60,6 +62,7 @@
         <p>Une IA a été utilisée comme aide pour structurer et commenter le code ainsi que pour préparer une première version du texte. Les auteurs du projet doivent relire les informations et vérifier les sources.</p>
     </div>
 
+    <!-- Conclusion générale du projet, placée à la fin du contenu. -->
     <div class="mini-section">
         <h2>Conclusion</h2>
         <p>L'intelligence artificielle est à la fois un outil d'aide et une source de changements pour les métiers de l'informatique. Elle peut accélérer certaines tâches, mais ses résultats ne sont pas toujours justes : les professionnels doivent les contrôler et rester responsables de leurs décisions.</p>
@@ -67,5 +70,28 @@
     </div>
 
     <p><a href="index.html">Retour à la première page</a></p>
+
+    <!-- Script placé à la fin du body : les éléments HTML sont déjà créés lorsqu'il s'exécute. -->
+    <script>
+        let clicsPage2 = 0;
+        let secondesPage2 = 0;
+
+        // Chaque page possède sa propre clé de visites dans le stockage local du navigateur.
+        const visitesPage2 = Number(localStorage.getItem('visitesContenuIA')) || 0;
+        document.getElementById('visitesPage2').textContent = visitesPage2 + 1;
+        localStorage.setItem('visitesContenuIA', visitesPage2 + 1);
+
+        // À chaque clic, on augmente le compteur puis on actualise le nombre affiché.
+        document.getElementById('boutonPage2').addEventListener('click', function () {
+            clicsPage2 += 1;
+            document.getElementById('clicsPage2').textContent = clicsPage2;
+        });
+
+        // Cette fonction est exécutée une fois par seconde (1000 millisecondes).
+        setInterval(function () {
+            secondesPage2 += 1;
+            document.getElementById('tempsPage2').textContent = secondesPage2;
+        }, 1000);
+    </script>
 </body>
 </html>
