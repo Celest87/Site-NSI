@@ -79,3 +79,24 @@ Le site reste volontairement simple : le compteur de visites dépend du navigate
 - Des fonctions : compteur de visites, réponse affichée au clic et définition affichée au survol.
 - Une présentation orale d'environ dix minutes.
 - Un dossier final avec l'adresse du site, des captures d'écran et un diaporama.
+
+
+
+
+
+Première page :
+
+    - Améliorer le schéma pour nous donner du temps a l'oral
+    - Mettre la conclusion sur la deuxième page
+    - Rétrécir la prémière image
+    - Enlever les premiers tableaux et les laisser sur la deuxieme page
+    - Mettre le JavaScript tout en bas de la première page
+    - Mettre une devinette
+    - Voir pour déplacer la vidéo
+
+Deuxième page :
+
+    - Rétrécir ou enlever les grands paragraphes
+    - Centre les titres des colonnes dans le tableau
+    - Mettre la conclusion en bas de la page et l'enrichir
+    - Rajouter les sources de nos informations et préciser si possible quand on a utilisé l'ia (en mentant, un peu, si besoin)
