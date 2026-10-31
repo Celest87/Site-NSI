@@ -1,40 +1,149 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8"/>
-			<title>Projet NSI IA</title>
-			<link rel="stylesheet" type="text/css" href="contenu.css">
-		</head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet NSI - L'IA et l'informatique</title>
+    <link rel="stylesheet" type="text/css" href="contenu.css">
+</head>
+<body>
+    <header class="header">
+        <h1 id="haut">L'impact de l'IA sur les métiers de l'informatique</h1>
+        <nav class="menu">
+            <a href="#intro">Introduction</a>
+            <a href="#chiffres">Chiffres-clés</a>
+            <a href="#devinette">Dévinette</a>
+            <a href="#definition">Définition</a>
+            <a href="contenu1.html">Page suivante</a>
+        </nav>
+    </header>
 
-		<body>
-			<h1>L'impact de l'IA sur les métiers de l'informatique</h1>
-			<p>
-				
-				Pour plus de précisions, <a href="https://site-nsi.gaillochonpaul.workers.dev/contenu1">cliquer ici</a>
-				<img src="image.jpg" alt="img_ia">
+    <main>
+        <section id="intro" class="section">
+            <p>
+                L'intelligence artificielle transforme rapidement le monde du numérique. Elle aide les développeurs,
+                modifie les méthodes de travail et soulève aussi des questions sur l'avenir des emplois.
+                Dans ce projet, nous allons voir les principaux avantages, les risques et les évolutions de ce secteur.
+            </p>
 
-			</p>
-			<p>Nombre de clics : <span id="compteur">0</span></p>
-			<button id="bouton">Clique-moi</button>
-			<script>
-    			let clics = 0;
+            <a class="cta" href="contenu1.html">Pour plus de précisions, cliquer ici</a>
 
-    			document.getElementById("bouton").addEventListener("click", function() {
-        		clics = clics + 1;
-        		document.getElementById("compteur").textContent = clics;
-    			});
-			</script>
+            <figure class="illustration">
+                <img src="image.jpg" alt="Illustration représentant l'intelligence artificielle">
+                <figcaption>Illustration de l'intelligence artificielle appliquée au numérique.</figcaption>
+            </figure>
+        </section>
 
-			<p>Temps passé sur la page : <span id="temps">0</span> secondes</p>
+        <section id="chiffres" class="section">
+            <h2>Chiffres-clés</h2>
+            <ul class="liste">
+                <li>Nombre de visites sur cette page : <strong><span id="visites">0</span></strong></li>
+                <li>Nombre de clics sur le bouton : <strong><span id="compteur">0</span></strong></li>
+                <li>Temps passé sur la page : <strong><span id="temps">0</span></strong> secondes</li>
+            </ul>
 
-			<script>
-				let secondes = 0;
+            <button id="bouton" class="bouton">Clique-moi</button>
+        </section>
 
-				setInterval(function() {
-    			secondes = secondes + 1;
-    			document.getElementById("temps").textContent = secondes;
-				}, 1000);
-			</script>
-		</body>
-	</html>
+        <section id="devinette" class="section">
+            <h2>Dévinette</h2>
+            <p>Quel outil permet à un ordinateur de détecter des motifs dans des données et d'apprendre sans être programmé ligne par ligne ?</p>
+            <button id="revelerReponse" class="bouton secondaire">Afficher la réponse</button>
+            <p id="reponse" class="cache">La réponse est : l'intelligence artificielle.</p>
+        </section>
+
+        <section id="definition" class="section">
+            <h2>Définition de terme</h2>
+            <p>
+                Le mot <span class="mot-cle">IA<span class="definition">L'intelligence artificielle désigne des systèmes capables d'analyser des données, d'apprendre et de prendre des décisions à partir de modèles informatiques.</span></span>
+                est aujourd'hui au cœur de nombreux outils numériques.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Schéma simplifié</h2>
+            <div class="schema">
+                <div class="etape">Données</div>
+                <div class="fleche">→</div>
+                <div class="etape">Modèle IA</div>
+                <div class="fleche">→</div>
+                <div class="etape">Décision</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Vidéo d'exemple</h2>
+            <iframe class="video" src="https://www.youtube.com/embed/2ePf9rue1Ao" title="Vidéo sur l'IA" allowfullscreen></iframe>
+        </section>
+
+        <section class="section">
+            <h2>Météo et température</h2>
+            <div class="meteo">
+                <p>Paris</p>
+                <p>Température : 20°C</p>
+                <p>Conditions : Ensoleillé</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Comparatif</h2>
+            <table>
+                <tr>
+                    <th>Points positifs</th>
+                    <th>Points négatifs</th>
+                </tr>
+                <tr>
+                    <td>Gain de temps dans le développement</td>
+                    <td>Risques de remplacement de certains emplois</td>
+                </tr>
+                <tr>
+                    <td>Capacité à analyser de grandes quantités de données</td>
+                    <td>Besoin important en matériels performants</td>
+                </tr>
+            </table>
+        </section>
+
+        <p class="source">Source : <a href="https://www.orange.com/fr/actualites/ia/definition-intelligence-artificielle" target="_blank" rel="noopener noreferrer">Orange - Intelligence artificielle</a></p>
+    </main>
+
+    <footer class="footer">
+        <a href="#haut">Retour en haut</a>
+    </footer>
+
+    <script>
+        let clics = 0;
+        let secondes = 0;
+
+        const compteur = document.getElementById("compteur");
+        const temps = document.getElementById("temps");
+        const bouton = document.getElementById("bouton");
+        const boutonReponse = document.getElementById("revelerReponse");
+        const reponse = document.getElementById("reponse");
+
+        const visites = Number(localStorage.getItem("visitesPageIA")) || 0;
+        const visitesElement = document.getElementById("visites");
+        const nouvellesVisites = visites + 1;
+        localStorage.setItem("visitesPageIA", nouvellesVisites);
+        visitesElement.textContent = nouvellesVisites;
+
+        bouton.addEventListener("click", function() {
+            clics = clics + 1;
+            compteur.textContent = clics;
+        });
+
+        boutonReponse.addEventListener("click", function() {
+            if (reponse.classList.contains("visible")) {
+                reponse.classList.remove("visible");
+            } else {
+                reponse.classList.add("visible");
+            }
+        });
+
+        setInterval(function() {
+            secondes = secondes + 1;
+            temps.textContent = secondes;
+        }, 1000);
+    </script>
+</body>
+</html>
 
