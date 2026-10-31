@@ -40,6 +40,14 @@ img {
     margin: 20px 0;
 }
 
+#maison {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #8fe8ff;
+}
+
 .liste {
     background: #eef3f8;
     padding: 15px 25px;
