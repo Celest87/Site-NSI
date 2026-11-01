@@ -1,7 +1,5 @@
-/* =========================================================
-   STYLE GENERAL
-   Cette feuille est utilisee par les deux pages HTML.
-   ========================================================= */
+/*STYLE GENERAL
+Utilisee par les deux pages HTML.*/
 body {
     /* Largeur maximale du texte pour eviter les lignes trop longues. */
     max-width: 900px;
@@ -37,19 +35,15 @@ h1 {
 .illustration {
     /* Affiche l'image comme un bloc pour pouvoir la centrer. */
     display: block;
-    /* Donne une largeur fixe, limitee par max-width sur petit ecran. */
-    width: 560px;
     /* Ajoute de l'espace et centre l'image horizontalement. */
     margin: 20px auto;
     /* Arrondit les coins de l'image principale. */
     border-radius: 12px;
-    /* Ajoute une ombre bleue discrete autour de l'image. */
-    box-shadow: 0 0 22px rgba(86, 190, 255, 0.35);
 }
 
 #maison {
     /* Place l'icone independamment du texte de la page. */
-    position: absolute;
+    position: fixed;
     /* Ecarte l'icone du haut de la fenetre. */
     top: 20px;
     /* Ecarte l'icone du bord gauche de la fenetre. */
@@ -65,17 +59,13 @@ h1 {
 .mini-section,
 .bloc {
     /* Espacement autour de chaque bloc. */
-    margin: 18px 0;
+    margin: 18px 0px;
     /* Espacement entre le bord du bloc et son texte. */
     padding: 15px;
     /* Fond sombre legerement transparent pour laisser voir les couleurs dessous. */
     background: rgba(14, 24, 35, 0.8);
-    /* Fin contour bleu autour du bloc. */
-    border: 1px solid rgba(127, 180, 255, 0.3);
-    /* Coins arrondis pour harmoniser les encadres. */
+    /* Coins arrondis. */
     border-radius: 10px;
-    /* Ombre douce qui detache legerement le bloc du fond. */
-    box-shadow: 0 0 14px rgba(86, 190, 255, 0.1);
 }
 
 /* LIENS ET BOUTON */
@@ -88,8 +78,6 @@ a,
 a {
     /* Retire le soulignement par defaut des liens. */
     text-decoration: none;
-    /* Rend progressif le changement de couleur au survol. */
-    transition: color 0.2s;
 }
 
 a:hover {
@@ -110,8 +98,6 @@ button {
     border-radius: 6px;
     /* Signale que le bouton est interactif. */
     cursor: pointer;
-    /* Anime doucement la couleur du fond au survol. */
-    transition: background 0.2s;
 }
 
 button:hover {
