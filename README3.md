@@ -53,7 +53,8 @@ Les éléments ci-dessous utilisent la syntaxe standard des listes de tâches Ma
 - [x] Ajouter des commentaires expliquant les parties moins évidentes du HTML, CSS et JavaScript.
 - [x] Utiliser des cases de tâches Markdown compatibles avec l'aperçu de VS Code.
 - [x] Simplifier le CSS en conservant les styles nécessaires aux interactions et à la lisibilité.
-- [x] Réduire le CSS à une présentation sobre, avec plus de dix propriétés différentes.
+- [x] Réduire le CSS à l'essentiel, avec plus de dix propriétés différentes.
+- [x] Ajouter un fond original avec des dégradés discrets, sans animation.
 
 ## Dossier et présentation à terminer
 
