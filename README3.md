@@ -19,6 +19,7 @@ Les éléments ci-dessous utilisent la syntaxe standard des listes de tâches Ma
 - [x] Commenter le CSS et le JavaScript en français.
 - [x] Utiliser au moins dix propriétés CSS.
 - [x] Utiliser des sélecteurs CSS de balise, de classe et d'identifiant.
+- [x] Garder un style CSS simple, lisible et adapté à un projet de Terminale NSI.
 - [x] Ajouter un titre en rapport avec le sujet.
 - [x] Ajouter une image en rapport avec le sujet.
 - [x] Ajouter une liste ordonnée et une liste non ordonnée.
@@ -51,6 +52,8 @@ Les éléments ci-dessous utilisent la syntaxe standard des listes de tâches Ma
 - [x] Vérifier que les modifications ne présentent pas d'erreur de format Git.
 - [x] Ajouter des commentaires expliquant les parties moins évidentes du HTML, CSS et JavaScript.
 - [x] Utiliser des cases de tâches Markdown compatibles avec l'aperçu de VS Code.
+- [x] Simplifier le CSS en conservant les styles nécessaires aux interactions et à la lisibilité.
+- [x] Réduire le CSS à une présentation sobre, avec plus de dix propriétés différentes.
 
 ## Dossier et présentation à terminer
 
