@@ -5,7 +5,7 @@ Ce document explique le fonctionnement des deux pages HTML et de leur feuille de
 ## Fichiers du projet
 
 - `index.html` : page d'accueil, introduction, devinette et explication simplifiée du fonctionnement d'une IA.
-- `contenu1.html` : deuxième page, avec les effets de l'IA, un tableau, les sources et les compteurs.
+- `contenu1.html` : deuxième page, avec les effets de l'IA, un tableau, une vidéo, les sources et les compteurs.
 - `contenu.css` : apparence commune aux deux pages.
 - `image.jpg` et `OIP2.png` : images utilisées sur les pages.
 
@@ -52,6 +52,7 @@ Le début du fichier reprend les mêmes réglages HTML que la page d'accueil et 
 
 - Les deux premières sections `.mini-section` distinguent les points positifs de l'IA et les points de vigilance.
 - Le tableau `<table>` compare ces deux aspects. Chaque `<tr>` forme une ligne, les `<th>` sont les cellules d'en-tête et les `<td>` sont les cellules ordinaires.
+- La vidéo intégrée provient de la chaîne L'Étudiant et présente le métier d'ingénieur en intelligence artificielle. Le lien sous le lecteur permet de l'ouvrir directement sur YouTube si l'intégration est bloquée.
 - La section `id="sources"` rassemble les références. Les liens externes utilisent `target="_blank"` pour s'ouvrir dans un nouvel onglet et `rel="noopener noreferrer"` pour limiter les risques liés à cette ouverture.
 - La section « Conclusion » résume les idées principales.
 - Le dernier lien de navigation ramène à `index.html`.
@@ -66,7 +67,7 @@ Le bloc `<aside class="compteurs">` affiche les visites, les clics et le temps. 
 
 ## `contenu.css` : le style commun
 
-La feuille contient **42 déclarations** et **17 propriétés CSS différentes**. Une déclaration est un réglage écrit dans une règle ; plusieurs déclarations peuvent utiliser la même propriété.
+La feuille contient **43 déclarations** et **17 propriétés CSS différentes**. Une déclaration est un réglage écrit dans une règle ; plusieurs déclarations peuvent utiliser la même propriété.
 
 ### Organisation du style
 
