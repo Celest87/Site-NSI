@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Métadonnées identiques à la page d'accueil ; les deux pages chargent le même fichier CSS. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les effets de l'IA - Projet NSI</title>
@@ -26,7 +27,8 @@
         <p>Les systèmes d'IA nécessitent aussi des équipements comme des serveurs, de la mémoire et des processeurs. Leur fabrication et leur utilisation ont un coût matériel et énergétique.</p>
     </div>
 
-    <!-- Le tableau résume les deux points de vue ; th désigne les cellules d'en-tête. -->
+    <!-- Le tableau résume les deux points de vue.
+         Chaque tr représente une ligne, th une cellule de titre, et td une cellule de contenu. -->
     <table>
         <tr>
             <th>Points positifs</th>
@@ -62,7 +64,8 @@
 
     <p><a href="index.html">Retour à la première page</a></p>
 
-    <!-- Petit bloc récapitulatif des compteurs, placé discrètement en bas de la deuxième page. -->
+    <!-- Petit bloc récapitulatif, placé après le contenu pour rester discret.
+         Les id sont des points d'accroche que JavaScript met à jour. -->
     <aside class="compteurs" aria-label="Compteurs de la page">
         <span>Visites : <strong id="visitesPage2">0</strong></span>
         <span>Clics : <strong id="clicsPage2">0</strong></span>
@@ -72,21 +75,28 @@
 
     <!-- Script placé à la fin du body : les éléments HTML sont déjà créés lorsqu'il s'exécute. -->
     <script>
+        // Ces variables ne sont pas sauvegardées : clics et secondes repartent à zéro à l'ouverture.
         let clicsPage2 = 0;
         let secondesPage2 = 0;
 
-        // Chaque page possède sa propre clé de visites dans le stockage local du navigateur.
+        // getItem renvoie une chaîne ou null. Number convertit cette valeur en nombre ;
+        // si aucune visite n'existe encore, || 0 initialise le compteur à zéro.
         const visitesPage2 = Number(localStorage.getItem('visitesContenuIA')) || 0;
-        document.getElementById('visitesPage2').textContent = visitesPage2 + 1;
-        localStorage.setItem('visitesContenuIA', visitesPage2 + 1);
+        // On ajoute une visite, on affiche le nouveau total, puis on le sauvegarde sous une clé texte.
+        // localStorage est propre à ce navigateur : ce n'est pas un compteur global du site.
+        const totalVisitesPage2 = visitesPage2 + 1;
+        document.getElementById('visitesPage2').textContent = totalVisitesPage2;
+        localStorage.setItem('visitesContenuIA', totalVisitesPage2);
 
-        // À chaque clic, on augmente le compteur puis on actualise le nombre affiché.
+        // addEventListener associe le clic à une fonction exécutée uniquement lors de l'action.
         document.getElementById('boutonPage2').addEventListener('click', function () {
             clicsPage2 += 1;
+            // textContent modifie uniquement le texte de la balise strong correspondante.
             document.getElementById('clicsPage2').textContent = clicsPage2;
         });
 
-        // Cette fonction est exécutée une fois par seconde (1000 millisecondes).
+        // setInterval relance cette fonction après chaque délai de 1000 ms, soit une seconde.
+        // Il s'agit d'un temps écoulé approximatif, car le navigateur peut ralentir les pages inactives.
         setInterval(function () {
             secondesPage2 += 1;
             document.getElementById('tempsPage2').textContent = secondesPage2;

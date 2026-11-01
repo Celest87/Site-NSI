@@ -2,6 +2,14 @@
 
 Légende : `[x]` réalisé ; `[ ]` reste à faire.
 
+### Cocher les cases dans VS Code
+
+Les éléments ci-dessous utilisent la syntaxe standard des listes de tâches Markdown. Pour les cocher en cliquant dans l'aperçu :
+
+1. Installer l'extension recommandée **Markdown Checkboxes** (`bierner.markdown-checkbox`) depuis VS Code. Le dépôt la propose automatiquement dans les recommandations d'extensions.
+2. Ouvrir ce fichier dans l'aperçu Markdown avec `Ctrl+Shift+V`.
+3. Cliquer sur une case dans l'aperçu : l'extension met à jour `[ ]` en `[x]` dans le fichier.
+
 ## Site web et consignes de la fiche
 
 - [x] Créer un site sur le thème du mini-projet NSI.
@@ -41,6 +49,8 @@ Légende : `[x]` réalisé ; `[ ]` reste à faire.
 - [x] Ajouter un texte de présentation dans `README.md`.
 - [x] Vérifier les liens et les éléments interactifs dans le code.
 - [x] Vérifier que les modifications ne présentent pas d'erreur de format Git.
+- [x] Ajouter des commentaires expliquant les parties moins évidentes du HTML, CSS et JavaScript.
+- [x] Utiliser des cases de tâches Markdown compatibles avec l'aperçu de VS Code.
 
 ## Dossier et présentation à terminer
 
@@ -55,4 +65,4 @@ Légende : `[x]` réalisé ; `[ ]` reste à faire.
 
 ## Éléments facultatifs
 
-La fiche propose aussi, à titre facultatif, des schémas, photos, sons, vidéos, webcam, météo, température ou vitesse du vent. La vidéo et les données météo n'ont pas été ajoutées ; ces éléments ne sont pas nécessaires pour valider les fonctions obligatoires listées ci-dessus.
+La fiche propose aussi, à titre facultatif, des schémas, photos, sons, vidéos, webcam, météo, température ou vitesse du vent. Les données météo et la vitesse du vent n'ont pas été ajoutées : aucun chiffre fictif n'est affiché. Le schéma déjà présent répond à l'exemple de contenu visuel.

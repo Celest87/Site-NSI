@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Métadonnées de la page : encodage, affichage mobile, titre d'onglet et feuille CSS commune. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet NSI sur l'IA</title>
@@ -68,7 +69,8 @@
     <script>
         // La classe CSS visible affiche ou masque la réponse sans supprimer le texte du HTML.
         document.getElementById('revelerReponse').addEventListener('click', function () {
-            // La classe CSS visible fait apparaître ou disparaître la réponse.
+            // classList.toggle ajoute « visible » si elle manque, et la retire si elle est déjà présente.
+            // Le CSS associe display:none à l'état caché et display:block à l'état visible.
             document.getElementById('reponse').classList.toggle('visible');
         });
     </script>

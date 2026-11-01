@@ -1,23 +1,27 @@
 /* Style commun aux deux pages : police, largeur, couleurs et fond animé. */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* La page reste lisible sur grand écran et se centre grâce aux marges automatiques. */
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
+    /* line-height augmente l'espace entre les lignes pour faciliter la lecture. */
     line-height: 1.7;
     color: #eaf7ff;
-    /* Plusieurs dégradés superposés créent des halos lumineux sur le fond sombre. */
+    /* Les dégradés radiaux dessinent les halos ; le dernier dégradé fournit le fond général.
+       Ils sont empilés dans l'ordre : le premier est dessiné au-dessus des suivants. */
     background:
         radial-gradient(circle at 20% 20%, rgba(86, 190, 255, 0.3), transparent 20%),
         radial-gradient(circle at 80% 10%, rgba(85, 255, 196, 0.25), transparent 25%),
         radial-gradient(circle at 50% 80%, rgba(123, 92, 255, 0.22), transparent 30%),
         linear-gradient(135deg, #071018, #0d1c2d, #111827);
+    /* Un fond plus grand que la page peut être déplacé sans laisser apparaître de bord vide. */
     background-size: 200% 200%;
-    /* L'animation déplace lentement les dégradés pour donner un effet futuriste. */
+    /* 18 s règle la durée d'un cycle ; ease rend le mouvement progressif ; infinite le répète. */
     animation: animatedBackground 18s ease infinite;
 }
 
-/* Les étapes définissent les positions de départ, milieu et fin de l'animation. */
+/* Chaque pourcentage indique la position du fond à un moment donné du cycle animé. */
 @keyframes animatedBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -29,10 +33,12 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #eaf7ff;
+    /* Une ombre floue autour des lettres crée un léger effet lumineux. */
     text-shadow: 0 0 18px rgba(114, 214, 255, 0.9);
 }
 
 .intro {
+    /* La classe est réservée au paragraphe d'introduction, sans centrer les autres textes. */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -41,26 +47,28 @@ h1 {
 img {
     width: 100%;
     max-height: 280px;
+    /* cover remplit le cadre sans déformer l'image ; une partie peut être recadrée. */
     object-fit: cover;
     border-radius: 10px;
     margin: 20px 0;
 }
 
 .illustration {
-    /* Une classe dédiée réduit l'image principale sans agrandir ou déplacer l'icône maison. */
+    /* Cette règle précise surcharge les dimensions générales de img pour l'illustration. */
     display: block;
     max-width: 560px;
     margin: 20px auto;
 }
 
 #maison {
-    /* Positionne la petite icône dans le coin supérieur gauche de la page. */
+    /* Positionnement indépendant du texte : l'icône reste dans le coin supérieur gauche. */
     position: absolute;
     top: 20px;
     left: 20px;
     width: 42px;
     height: 42px;
     margin: 0;
+    /* contain garde toute l'icône visible, même si son format n'est pas carré. */
     object-fit: contain;
     border-radius: 6px;
 }
@@ -92,6 +100,7 @@ button:hover {
 /* Grille à deux colonnes utilisée pour juxtaposer les avantages et inconvénients. */
 .grid {
     display: grid;
+    /* Deux colonnes de même largeur ; gap crée l'espace entre elles. */
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin: 20px 0;
@@ -103,6 +112,7 @@ button:hover {
 }
 
 .schema li {
+    /* Sépare visuellement les quatre étapes numérotées du schéma. */
     margin: 10px 0;
 }
 
@@ -111,11 +121,13 @@ button:hover {
     margin: 25px 0;
     padding: 15px;
     background: rgba(14, 24, 35, 0.9);
+    /* rgba permet un fond légèrement transparent tout en conservant une bordure visible. */
     border: 1px solid rgba(127, 180, 255, 0.35);
     border-radius: 8px;
 }
 
 .cache {
+    /* État initial de la réponse : elle est présente dans le HTML mais invisible à l'écran. */
     display: none;
     margin-top: 10px;
     color: #a5f3c1;
@@ -127,11 +139,13 @@ button:hover {
 
 /* JavaScript ajoute ou retire cette classe quand on clique sur le bouton. */
 .cache.visible {
+    /* Cette règle ne s'applique qu'à un élément qui possède les deux classes. */
     display: block;
 }
 
 /* Le terme sert de point d'ancrage à la définition affichée au survol. */
 .term {
+    /* Sert de repère de position pour placer la définition près du mot. */
     position: relative;
     font-weight: bold;
     color: #76e4ff;
@@ -142,6 +156,7 @@ button:hover {
     /* La définition se place sous le mot ; elle reste au-dessus des autres blocs. */
     position: absolute;
     left: 0;
+    /* Position absolue par rapport au mot ; la définition ne décale pas le paragraphe. */
     top: 24px;
     width: 220px;
     background: #1f2d3d;
@@ -150,6 +165,7 @@ button:hover {
     padding: 8px;
     border-radius: 6px;
     display: none;
+    /* La définition chevauche le contenu voisin : z-index la place au premier plan. */
     z-index: 10;
 }
 
@@ -165,14 +181,17 @@ button:hover {
     background: rgba(14, 24, 35, 0.8);
     border: 1px solid rgba(127, 180, 255, 0.35);
     border-radius: 10px;
+    /* Ombre discrète pour séparer les encadrés du fond sans contraste trop fort. */
     box-shadow: 0 0 15px rgba(118, 219, 255, 0.08);
 }
 
 .compteurs {
+    /* Flex aligne les compteurs en ligne ; flex-wrap permet le retour à la ligne sur petit écran. */
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
+    /* Petit espacement entre les valeurs du compteur, sans en faire un gros encadré. */
     gap: 12px;
     margin: 18px 0 0;
     padding: 8px 12px;
@@ -196,6 +215,7 @@ button:hover {
 }
 
 .source {
+    /* Distingue visuellement la référence du contenu principal. */
     font-style: italic;
     color: #c4d6e8;
 }
@@ -210,16 +230,40 @@ table {
 th, td {
     border: 1px solid rgba(127, 180, 255, 0.4);
     padding: 12px;
+    /* Le texte des cellules est aligné à gauche ; seuls les th sont centrés plus bas. */
     text-align: left;
 }
 
 th {
+    /* Centre seulement les en-têtes ; le contenu des cellules reste aligné à gauche. */
     background: rgba(14, 24, 35, 0.95);
     text-align: center;
 }
 
 a {
+    /* Les liens ont une couleur contrastée et ne sont pas soulignés. */
     color: #8fe8ff;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Ajustements pour les écrans étroits afin d'éviter une page trop large ou des colonnes tassées. */
+@media (max-width: 600px) {
+    /* Ces règles remplacent celles de bureau quand la fenêtre fait 600 px ou moins. */
+    body {
+        margin: 16px auto;
+        padding: 14px;
+    }
+
+    .illustration {
+        max-width: 100%;
+    }
+
+    .compteurs {
+        justify-content: center;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
 }
