@@ -92,8 +92,6 @@ button {
     color: #eaf7ff;
     /* Fond bleu du bouton. */
     background: #245b78;
-    /* Bordure fine assortie aux liens. */
-    border: 1px solid rgba(143, 232, 255, 0.5);
     /* Coins arrondis du bouton. */
     border-radius: 6px;
     /* Signale que le bouton est interactif. */
@@ -119,8 +117,6 @@ th,
 td {
     /* Espace entre le texte et les bords de chaque cellule. */
     padding: 10px;
-    /* Bordure commune aux titres et aux cellules du tableau. */
-    border: 1px solid rgba(143, 232, 255, 0.4);
 }
 
 th {
@@ -144,10 +140,8 @@ th {
 }
 
 .term {
-    /* Met en evidence le mot qui possede une definition. */
+    /* Met en evidence le mot qui est defini. */
     font-weight: bold;
-    /* Le curseur indique que le survol du mot a un effet. */
-    cursor: help;
 }
 
 .def {
