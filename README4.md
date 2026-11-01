@@ -35,12 +35,12 @@ Dans `<head>`, les balises `<meta>` règlent l'encodage des caractères et l'aff
 
 Le script se trouve juste avant `</body>`, après les éléments HTML qu'il utilise.
 
-1. `document.getElementById('revelerReponse')` recherche le bouton grâce à son identifiant.
-2. `addEventListener('click', ...)` demande au navigateur d'exécuter une fonction lorsque le bouton est cliqué.
-3. La fonction retrouve l'élément `reponse` et appelle `classList.toggle('visible')`.
-4. `toggle` ajoute la classe `visible` si elle n'est pas présente et la retire si elle l'est déjà. Le CSS affiche ou masque alors la réponse.
+1. `document.getElementById('revelerReponse')` retrouve le bouton dans la page.
+2. `onclick` dit quoi faire quand le bouton est cliqué.
+3. Le script ajoute la classe `visible` au texte de la réponse.
+4. Le CSS repère cette classe et affiche le texte.
 
-Le texte de la réponse reste donc dans le HTML : seul son affichage change.
+La réponse reste dans le HTML, mais elle est cachée jusqu'au clic.
 
 ## `contenu1.html` : la deuxième page
 
@@ -61,23 +61,23 @@ Le début du fichier reprend les mêmes réglages HTML que la page d'accueil et 
 Le bloc `<aside class="compteurs">` affiche les visites, les clics et le temps. Les éléments `<strong>` ont des identifiants que le script retrouve pour mettre leurs nombres à jour.
 
 - **Visites :** `localStorage.getItem('visitesContenuIA')` lit le nombre enregistré dans ce navigateur. `Number(...)` le convertit en nombre. Si aucune valeur n'est enregistrée, `|| 0` démarre à zéro. Le script ajoute ensuite une visite et sauvegarde le nouveau total avec `localStorage.setItem(...)`. Ce total est propre au navigateur utilisé : il ne représente pas les visites de tous les internautes.
-- **Clics :** la variable `clicsPage2` commence à zéro à chaque chargement. Un clic sur `boutonPage2` l'augmente de un, puis `textContent` met à jour le nombre affiché.
-- **Temps :** `setInterval` exécute une fonction toutes les 1 000 millisecondes. Elle augmente `secondesPage2` et actualise l'affichage. Le temps est approximatif, car un navigateur peut ralentir une page inactive.
+- **Clics :** la variable `clics` commence à zéro. Quand le bouton est cliqué, elle augmente de un et `textContent` affiche le nouveau total.
+- **Temps :** `setInterval` répète une petite fonction toutes les 1 000 millisecondes. Elle augmente `secondes` et actualise le nombre affiché. Le temps est approximatif si le navigateur ralentit une page inactive.
 
 ## `contenu.css` : le style commun
 
-La feuille contient **51 déclarations** et **20 propriétés CSS différentes**. Une déclaration est un réglage écrit dans une règle ; plusieurs déclarations peuvent utiliser la même propriété.
+La feuille contient **42 déclarations** et **17 propriétés CSS différentes**. Une déclaration est un réglage écrit dans une règle ; plusieurs déclarations peuvent utiliser la même propriété.
 
 ### Organisation du style
 
 - **Fond général (`body`) :** limite la largeur, centre la page et règle l'espace intérieur, la police et la couleur du texte. Le fond combine trois halos bleu, vert et violet avec un dégradé sombre.
 - **Images :** `img` empêche les images de dépasser leur conteneur. `.illustration` centre l'image principale, arrondit ses coins et ajoute une ombre bleue. `#maison` place l'icône de retour en haut à gauche.
-- **Titres et sections :** `h1` centre le titre. `.liste`, `.mini-section` et `.bloc` partagent leurs marges, leur espace intérieur, un fond sombre transparent, une bordure et des coins arrondis.
+- **Titres et sections :** `h1` centre le titre. `.liste`, `.mini-section`, `.conclusion` et `.bloc` partagent leurs marges, leur espace intérieur, un fond sombre transparent, une bordure et des coins arrondis. La conclusion utilise sa propre classe `.conclusion`.
 - **Liens et bouton :** les liens sont cyan et changent de couleur au survol. Le bouton a un fond bleu, des coins arrondis et un curseur de clic ; sa couleur change aussi au survol. `transition` rend ces changements progressifs.
 - **Tableau :** `table`, `th` et `td` remplissent la largeur disponible, fusionnent les bordures et distinguent visuellement les cellules d'en-tête.
 - **Devinette et définition :** `.cache` et `.def` sont masqués au départ. Quand JavaScript ajoute `visible` après le clic, `.cache.visible` affiche la réponse. Le survol de `.term` affiche `.def`.
 
-Les **20 propriétés différentes** utilisées sont `background`, `border`, `border-collapse`, `border-radius`, `box-shadow`, `color`, `cursor`, `display`, `font`, `font-weight`, `left`, `margin`, `max-width`, `padding`, `position`, `text-align`, `text-decoration`, `top`, `transition` et `width`.
+Les **17 propriétés différentes** utilisées sont `background`, `border-collapse`, `border-radius`, `color`, `cursor`, `display`, `font`, `font-weight`, `left`, `margin`, `max-width`, `padding`, `position`, `text-align`, `text-decoration`, `top` et `width`.
 
 Les sélecteurs commençant par un point, comme `.bloc`, ciblent une classe HTML. Ceux commençant par `#`, comme `#details`, ciblent un identifiant. Les noms comme `body`, `table` ou `button` ciblent directement des balises.
 

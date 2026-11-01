@@ -62,7 +62,7 @@
     </div>
 
     <!-- Conclusion générale du projet, placée à la fin du contenu. -->
-    <div class="mini-section">
+    <div class="conclusion">
         <h2>Conclusion</h2>
         <p>L'intelligence artificielle est à la fois un outil d'aide et une source de changements pour les métiers de l'informatique. Elle peut accélérer certaines tâches, mais ses résultats ne sont pas toujours justes : les professionnels doivent les contrôler et rester responsables de leurs décisions.</p>
         <p>À l'avenir, les compétences techniques resteront importantes, tout comme l'esprit critique, la vérification des informations et la compréhension des limites de ces outils. L'enjeu n'est donc pas seulement de savoir utiliser l'IA, mais aussi de savoir quand et comment lui faire confiance.</p>
@@ -81,37 +81,26 @@
         <button id="boutonPage2">+1 clic</button>
     </aside>
 
-    <!-- Le script est a la fin : les elements des compteurs existent deja au demarrage. -->
+    <!-- JavaScript met a jour les compteurs affiches ci-dessus. -->
     <script>
-        // Ces valeurs restent en memoire vive et repartent a zero au rechargement.
-        let clicsPage2 = 0;
-        let secondesPage2 = 0;
+        // Le nombre de visites est garde dans le navigateur, puis augmente de un.
+        let visites = Number(localStorage.getItem('visitesContenuIA')) || 0;
+        visites++;
+        document.getElementById('visitesPage2').textContent = visites;
+        localStorage.setItem('visitesContenuIA', visites);
 
-        // getItem renvoie une chaîne ou null. Number convertit cette valeur en nombre ;
-        // si aucune visite n'existe encore, || 0 initialise le compteur à zéro.
-        // Cette cle permet de retrouver la valeur sauvegardee lors d'une visite precedente.
-        const visitesPage2 = Number(localStorage.getItem('visitesContenuIA')) || 0;
-        // On ajoute une visite, on affiche le nouveau total, puis on le sauvegarde sous une clé texte.
-        // localStorage est propre à ce navigateur : ce n'est pas un compteur global du site.
-        const totalVisitesPage2 = visitesPage2 + 1;
-        // textContent met a jour le chiffre sans modifier les autres elements de la page.
-        document.getElementById('visitesPage2').textContent = totalVisitesPage2;
-        localStorage.setItem('visitesContenuIA', totalVisitesPage2);
+        // Le compteur de clics repart de zero a chaque ouverture de la page.
+        let clics = 0;
+        document.getElementById('boutonPage2').onclick = function () {
+            clics++;
+            document.getElementById('clicsPage2').textContent = clics;
+        };
 
-        // addEventListener associe le clic à une fonction exécutée uniquement lors de l'action.
-        // Chaque clic augmente le compteur puis met a jour le chiffre affiche.
-        document.getElementById('boutonPage2').addEventListener('click', function () {
-            clicsPage2 += 1;
-            // textContent modifie uniquement le texte de la balise strong correspondante.
-            document.getElementById('clicsPage2').textContent = clicsPage2;
-        });
-
-        // setInterval relance cette fonction après chaque délai de 1000 ms, soit une seconde.
-        // Il s'agit d'un temps écoulé approximatif, car le navigateur peut ralentir les pages inactives.
-        // Cette fonction se repete toutes les 1000 ms, soit environ chaque seconde.
+        // Le temps augmente d'une seconde toutes les 1000 millisecondes.
+        let secondes = 0;
         setInterval(function () {
-            secondesPage2 += 1;
-            document.getElementById('tempsPage2').textContent = secondesPage2;
+            secondes++;
+            document.getElementById('tempsPage2').textContent = secondes;
         }, 1000);
     </script>
 </body>

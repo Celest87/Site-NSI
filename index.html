@@ -74,15 +74,12 @@
     <!-- Ce lien propose une seconde facon d'ouvrir la page suivante. -->
     <a href="contenu1.html">Page suivante</a>
 
-    <!-- Le script est place en bas : le bouton et la reponse existent deja au demarrage. -->
+    <!-- JavaScript rend la reponse visible quand le bouton est clique. -->
     <script>
-        // La classe CSS visible affiche ou masque la réponse sans supprimer le texte du HTML.
-        document.getElementById('revelerReponse').addEventListener('click', function () {
-            // classList.toggle ajoute « visible » si elle manque, et la retire si elle est déjà présente.
-            // Le CSS associe display:none à l'état caché et display:block à l'état visible.
-            // getElementById retrouve le paragraphe ; toggle alterne son affichage.
-            document.getElementById('reponse').classList.toggle('visible');
-        });
+        // Au clic, on ajoute la classe visible au texte de la reponse.
+        document.getElementById('revelerReponse').onclick = function () {
+            document.getElementById('reponse').classList.add('visible');
+        };
     </script>
 </body>
 </html>

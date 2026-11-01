@@ -57,6 +57,7 @@ h1 {
 /* BLOCS DE CONTENU */
 .liste,
 .mini-section,
+.conclusion,
 .bloc {
     /* Espacement autour de chaque bloc. */
     margin: 18px 0px;
