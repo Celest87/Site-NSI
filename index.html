@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Métadonnées de la page : encodage, affichage mobile, titre d'onglet et feuille CSS commune. -->
+    <!-- Le head contient les reglages de la page, pas son contenu visible. -->
+    <!-- UTF-8 permet d'afficher correctement les accents et caracteres francais. -->
     <meta charset="UTF-8">
+    <!-- Cette regle adapte la page a la largeur d'un telephone ou d'une tablette. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le titre apparait dans l'onglet du navigateur. -->
     <title>Projet NSI sur l'IA</title>
+    <!-- Les deux pages partagent le meme fichier de styles. -->
     <link rel="stylesheet" href="contenu.css">
 </head>
 <body>
     <!-- Titre principal de la page d'accueil. -->
     <h1>L'impact de l'IA sur les métiers de l'informatique</h1>
 
-    <!-- Introduction et présentation générale du sujet. -->
+    <!-- Introduction et presentation generale du sujet ; la classe sert au CSS. -->
     <p class="intro">
         L'intelligence artificielle transforme le travail des informaticiens.
         Elle permet d'automatiser des tâches, d'analyser des données plus vite,
@@ -25,7 +29,7 @@
         <img class="illustration" src="image.jpg" alt="Illustration sur l'intelligence artificielle, cliquer pour consulter la suite">
     </a>
 
-    <!-- Liste non numérotée des principaux changements présentés dans le projet. -->
+    <!-- ul cree une liste a puces ; chaque li correspond a une puce. -->
     <ul class="liste">
         <li>Automation des tâches répétitives</li>
         <li>Analyse rapide des données</li>
@@ -38,7 +42,9 @@
     <!-- La réponse reste dans le HTML mais la classe cache la masque au chargement. -->
     <div class="bloc">
         <p>Quel domaine permet à un ordinateur d'analyser des données et de réaliser des tâches qui demandent habituellement une forme d'intelligence ?</p>
+        <!-- Cet identifiant permet au script de retrouver precisement le bouton. -->
         <button id="revelerReponse">Afficher</button>
+        <!-- Le script ajoutera ou retirera la classe visible sur ce paragraphe. -->
         <p id="reponse" class="cache">La réponse est : l'intelligence artificielle.</p>
     </div>
 
@@ -48,6 +54,7 @@
         est au cœur de nombreux outils numériques.
     </p>
 
+    <!-- L'id details est la cible du lien interne « Voir les détails ». -->
     <div id="details" class="mini-section">
         <h2>Comment fonctionne une IA ?</h2>
         <p>Un exemple simplifié en quatre étapes :</p>
@@ -61,16 +68,19 @@
         <p>Ce schéma reste simplifié : les méthodes varient selon le type d'intelligence artificielle.</p>
     </div>
 
+    <!-- Le lien #sources ouvre la deuxieme page directement au niveau des references. -->
     <p class="source">Sources des informations : <a href="contenu1.html#sources">voir les références sur la deuxième page</a>.</p>
 
+    <!-- Ce lien propose une seconde facon d'ouvrir la page suivante. -->
     <a href="contenu1.html">Page suivante</a>
 
-    <!-- Le script est placé en bas pour que les éléments HTML existent déjà au chargement. -->
+    <!-- Le script est place en bas : le bouton et la reponse existent deja au demarrage. -->
     <script>
         // La classe CSS visible affiche ou masque la réponse sans supprimer le texte du HTML.
         document.getElementById('revelerReponse').addEventListener('click', function () {
             // classList.toggle ajoute « visible » si elle manque, et la retire si elle est déjà présente.
             // Le CSS associe display:none à l'état caché et display:block à l'état visible.
+            // getElementById retrouve le paragraphe ; toggle alterne son affichage.
             document.getElementById('reponse').classList.toggle('visible');
         });
     </script>

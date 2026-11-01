@@ -1,122 +1,174 @@
-/* CSS partage : une mise en page simple, avec un fond bleu-vert original. */
+/* =========================================================
+   STYLE GENERAL
+   Cette feuille est utilisee par les deux pages HTML.
+   ========================================================= */
 body {
-    max-width: 800px;
-    margin: 30px auto;
+    /* Largeur maximale du texte pour eviter les lignes trop longues. */
+    max-width: 900px;
+    /* 40px en haut/bas ; auto centre la page horizontalement. */
+    margin: 40px auto;
+    /* Espace entre le bord de la page et son contenu. */
     padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #263746;
-    background: radial-gradient(circle at top right, #cce8e7, transparent 38%),
-                #f3f6f8;
+    /* Taille, hauteur de ligne et police du texte principal. */
+    font: 16px/1.6 Arial, sans-serif;
+    /* Couleur generale du texte, choisie pour contraster avec le fond. */
+    color: #eaf7ff;
+    /* Plusieurs fonds sont superposes : halos colores puis degrade sombre. */
+    background:
+        radial-gradient(circle at 20% 20%, rgba(86, 190, 255, 0.5), transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(85, 255, 196, 0.42), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(123, 92, 255, 0.38), transparent 45%),
+        linear-gradient(135deg, #071018, #0d1c2d, #111827);
 }
 
-h1,
-h2 {
-    color: #245b78;
-}
-
-h1,
-.intro {
-    text-align: center;
-}
-
+/* STYLE DES IMAGES */
 img {
-    display: block;
+    /* Une image ne peut pas depasser la largeur disponible. */
     max-width: 100%;
-    margin: 20px auto;
+}
+
+h1 {
+    /* Centre horizontalement le titre principal de chaque page. */
+    text-align: center;
+    /* Rend le titre plus epais que le texte normal. */
+    font-weight: 700;
 }
 
 .illustration {
-    width: 520px;
+    /* Affiche l'image comme un bloc pour pouvoir la centrer. */
+    display: block;
+    /* Donne une largeur fixe, limitee par max-width sur petit ecran. */
+    width: 560px;
+    /* Ajoute de l'espace et centre l'image horizontalement. */
+    margin: 20px auto;
+    /* Arrondit les coins de l'image principale. */
+    border-radius: 12px;
+    /* Ajoute une ombre bleue discrete autour de l'image. */
+    box-shadow: 0 0 22px rgba(86, 190, 255, 0.35);
 }
 
-/* La maison reste petite dans le coin et permet de revenir a l'accueil. */
 #maison {
+    /* Place l'icone independamment du texte de la page. */
     position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 40px;
-    margin: 0;
+    /* Ecarte l'icone du haut de la fenetre. */
+    top: 20px;
+    /* Ecarte l'icone du bord gauche de la fenetre. */
+    left: 20px;
+    /* Garde l'icone de retour petite. */
+    width: 42px;
+    /* Arrondit les coins de l'icone. */
+    border-radius: 8px;
 }
 
+/* BLOCS DE CONTENU */
 .liste,
 .mini-section,
 .bloc {
+    /* Espacement autour de chaque bloc. */
     margin: 18px 0;
+    /* Espacement entre le bord du bloc et son texte. */
     padding: 15px;
-    background: #fff;
-    border: 1px solid #d3dde3;
+    /* Fond sombre legerement transparent pour laisser voir les couleurs dessous. */
+    background: rgba(14, 24, 35, 0.8);
+    /* Fin contour bleu autour du bloc. */
+    border: 1px solid rgba(127, 180, 255, 0.3);
+    /* Coins arrondis pour harmoniser les encadres. */
+    border-radius: 10px;
+    /* Ombre douce qui detache legerement le bloc du fond. */
+    box-shadow: 0 0 14px rgba(86, 190, 255, 0.1);
 }
 
-.liste {
-    border-left: 4px solid #347a9e;
-}
-
+/* LIENS ET BOUTON */
 a,
 .term {
-    color: #17648a;
+    /* Couleur cyan pour reperer les liens et le terme interactif. */
+    color: #8fe8ff;
+}
+
+a {
+    /* Retire le soulignement par defaut des liens. */
+    text-decoration: none;
+    /* Rend progressif le changement de couleur au survol. */
+    transition: color 0.2s;
+}
+
+a:hover {
+    /* Eclaircit un lien lorsque le pointeur passe dessus. */
+    color: #fff;
 }
 
 button {
+    /* Espace interieur pour rendre le bouton plus facile a cliquer. */
     padding: 8px 12px;
-    color: #fff;
+    /* Couleur claire du texte du bouton. */
+    color: #eaf7ff;
+    /* Fond bleu du bouton. */
     background: #245b78;
-    border: 0;
+    /* Bordure fine assortie aux liens. */
+    border: 1px solid rgba(143, 232, 255, 0.5);
+    /* Coins arrondis du bouton. */
+    border-radius: 6px;
+    /* Signale que le bouton est interactif. */
     cursor: pointer;
+    /* Anime doucement la couleur du fond au survol. */
+    transition: background 0.2s;
 }
 
-/* JavaScript ajoute « visible » pour montrer la reponse au clic. */
-.cache {
-    display: none;
+button:hover {
+    /* Fond un peu plus clair pour confirmer le survol du bouton. */
+    background: #347a9e;
 }
 
-.cache.visible {
-    display: block;
-    color: #23613b;
-}
-
-.term {
-    position: relative;
-}
-
-/* La definition est cachee sous le mot jusqu'au survol. */
-.def {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    display: none;
-    width: 220px;
-    padding: 8px;
-    color: #fff;
-    background: #245b78;
-}
-
-.term:hover .def {
-    display: block;
-}
-
+/* TABLEAU */
 table {
+    /* Le tableau utilise toute la largeur du contenu. */
     width: 100%;
+    /* Ajoute un espace au-dessus et en dessous du tableau. */
     margin: 18px 0;
+    /* Fusionne les bordures des cellules voisines. */
     border-collapse: collapse;
 }
 
 th,
 td {
+    /* Espace entre le texte et les bords de chaque cellule. */
     padding: 10px;
-    border: 1px solid #aebdc7;
+    /* Bordure commune aux titres et aux cellules du tableau. */
+    border: 1px solid rgba(143, 232, 255, 0.4);
 }
 
 th {
-    color: #fff;
-    background: #245b78;
+    /* Centre le texte des titres de colonnes. */
     text-align: center;
+    /* Fond plus fonce pour distinguer l'entete du tableau. */
+    background: rgba(14, 24, 35, 0.9);
 }
 
-/* Petit affichage des compteurs en bas de la deuxieme page. */
-.compteurs {
-    margin-top: 18px;
-    color: #52616a;
-    text-align: right;
+/* REPONSE A LA DEVINETTE ET DEFINITION AU SURVOL */
+.cache,
+.def {
+    /* Masque ces textes tant que l'interaction n'a pas eu lieu. */
+    display: none;
+}
+
+.cache.visible,
+.term:hover .def {
+    /* Montre la reponse au clic ou la definition pendant le survol. */
+    display: block;
+}
+
+.term {
+    /* Met en evidence le mot qui possede une definition. */
+    font-weight: bold;
+    /* Le curseur indique que le survol du mot a un effet. */
+    cursor: help;
+}
+
+.def {
+    /* Ajoute de l'espace autour du texte de la definition. */
+    padding: 8px;
+    /* Fond fonce et presque opaque pour assurer la lisibilite. */
+    background: rgba(14, 24, 35, 0.95);
+    /* Arrondit les coins de l'encadre de definition. */
+    border-radius: 6px;
 }

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Métadonnées identiques à la page d'accueil ; les deux pages chargent le même fichier CSS. -->
+    <!-- Le head regroupe les reglages invisibles de la page. -->
+    <!-- UTF-8 prend en charge les accents et caracteres francais. -->
     <meta charset="UTF-8">
+    <!-- Cette balise adapte la mise en page aux ecrans de telephones et tablettes. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le texte du titre apparait dans l'onglet du navigateur. -->
     <title>Les effets de l'IA - Projet NSI</title>
+    <!-- La feuille CSS est commune a la page d'accueil. -->
     <link rel="stylesheet" href="contenu.css">
 </head>
 <body>
     <!-- Cette image est un lien cliquable vers la page d'accueil. L'id maison permet un style distinct. -->
     <a href="index.html"><img id="maison" src="OIP2.png" alt="Retour à l'accueil"></a>
 
+    <!-- Titre principal de cette deuxieme page. -->
     <h1>Les effets de l'IA sur l'informatique</h1>
 
     <!-- Première partie : usages qui peuvent aider les professionnels. -->
@@ -27,8 +32,8 @@
         <p>Les systèmes d'IA nécessitent aussi des équipements comme des serveurs, de la mémoire et des processeurs. Leur fabrication et leur utilisation ont un coût matériel et énergétique.</p>
     </div>
 
-    <!-- Le tableau résume les deux points de vue.
-         Chaque tr représente une ligne, th une cellule de titre, et td une cellule de contenu. -->
+    <!-- Le tableau met les deux points de vue en regard.
+         Chaque tr forme une ligne, th une cellule d'en-tete et td une cellule de contenu. -->
     <table>
         <tr>
             <th>Points positifs</th>
@@ -44,10 +49,11 @@
         </tr>
     </table>
 
-    <!-- Cette ancre peut être ciblée depuis la première page avec #sources. -->
+    <!-- L'identifiant sources permet au lien de la page d'accueil de viser cette section. -->
     <div id="sources" class="mini-section sources">
         <h2>Sources et démarche</h2>
         <ul>
+            <!-- target ouvre la source dans un nouvel onglet ; rel protege la page d'origine. -->
             <li><a href="https://www.orange.com/fr/actualites/ia/definition-intelligence-artificielle" target="_blank" rel="noopener noreferrer">Orange : définition de l'intelligence artificielle</a></li>
             <li><a href="https://www.ilo.org/publications/generative-ai-and-jobs-global-analysis-potential-effects-job-quantity-and" target="_blank" rel="noopener noreferrer">Organisation internationale du Travail : IA générative et emplois</a></li>
             <li><a href="https://www.iea.org/reports/energy-and-ai" target="_blank" rel="noopener noreferrer">Agence internationale de l'énergie : énergie et IA</a></li>
@@ -62,10 +68,12 @@
         <p>À l'avenir, les compétences techniques resteront importantes, tout comme l'esprit critique, la vérification des informations et la compréhension des limites de ces outils. L'enjeu n'est donc pas seulement de savoir utiliser l'IA, mais aussi de savoir quand et comment lui faire confiance.</p>
     </div>
 
+    <!-- Ce lien complete l'icone maison pour revenir a la page d'accueil. -->
     <p><a href="index.html">Retour à la première page</a></p>
 
     <!-- Petit bloc récapitulatif, placé après le contenu pour rester discret.
          Les id sont des points d'accroche que JavaScript met à jour. -->
+    <!-- Les identifiants des nombres servent de points de mise a jour au JavaScript. -->
     <aside class="compteurs" aria-label="Compteurs de la page">
         <span>Visites : <strong id="visitesPage2">0</strong></span>
         <span>Clics : <strong id="clicsPage2">0</strong></span>
@@ -73,22 +81,25 @@
         <button id="boutonPage2">+1 clic</button>
     </aside>
 
-    <!-- Script placé à la fin du body : les éléments HTML sont déjà créés lorsqu'il s'exécute. -->
+    <!-- Le script est a la fin : les elements des compteurs existent deja au demarrage. -->
     <script>
-        // Ces variables ne sont pas sauvegardées : clics et secondes repartent à zéro à l'ouverture.
+        // Ces valeurs restent en memoire vive et repartent a zero au rechargement.
         let clicsPage2 = 0;
         let secondesPage2 = 0;
 
         // getItem renvoie une chaîne ou null. Number convertit cette valeur en nombre ;
         // si aucune visite n'existe encore, || 0 initialise le compteur à zéro.
+        // Cette cle permet de retrouver la valeur sauvegardee lors d'une visite precedente.
         const visitesPage2 = Number(localStorage.getItem('visitesContenuIA')) || 0;
         // On ajoute une visite, on affiche le nouveau total, puis on le sauvegarde sous une clé texte.
         // localStorage est propre à ce navigateur : ce n'est pas un compteur global du site.
         const totalVisitesPage2 = visitesPage2 + 1;
+        // textContent met a jour le chiffre sans modifier les autres elements de la page.
         document.getElementById('visitesPage2').textContent = totalVisitesPage2;
         localStorage.setItem('visitesContenuIA', totalVisitesPage2);
 
         // addEventListener associe le clic à une fonction exécutée uniquement lors de l'action.
+        // Chaque clic augmente le compteur puis met a jour le chiffre affiche.
         document.getElementById('boutonPage2').addEventListener('click', function () {
             clicsPage2 += 1;
             // textContent modifie uniquement le texte de la balise strong correspondante.
@@ -97,6 +108,7 @@
 
         // setInterval relance cette fonction après chaque délai de 1000 ms, soit une seconde.
         // Il s'agit d'un temps écoulé approximatif, car le navigateur peut ralentir les pages inactives.
+        // Cette fonction se repete toutes les 1000 ms, soit environ chaque seconde.
         setInterval(function () {
             secondesPage2 += 1;
             document.getElementById('tempsPage2').textContent = secondesPage2;
