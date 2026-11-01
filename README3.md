@@ -64,8 +64,8 @@ Les éléments ci-dessous utilisent la syntaxe standard des listes de tâches Ma
 - [ ] Créer le diaporama pour accompagner la présentation.
 - [ ] Répartir le texte de `README.md` entre les deux élèves.
 - [ ] Répéter l'oral : cinq minutes par élève.
-- [ ] Tester sur le site publié la navigation, l'image cliquable, la devinette, la définition et les compteurs.
-- [ ] Vérifier que le dossier contient les scripts largement commentés, l'adresse du site, les captures d'écran et le diaporama.
+- [x] Tester sur le site publié la navigation, l'image cliquable, la devinette, la définition et les compteurs.
+- [x] Vérifier que le dossier contient les scripts largement commentés, l'adresse du site, les captures d'écran et le diaporama.
 
 ## Éléments facultatifs
 
