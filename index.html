@@ -78,6 +78,9 @@
     <script>
         // Au clic, on ajoute la classe visible au texte de la reponse.
         document.getElementById('revelerReponse').onclick = function () {
+            // classList.toggle ajoute « visible » si elle manque, et la retire si elle est déjà présente.
+            // Le CSS associe display:none à l'état caché et display:block à l'état visible.
+            // getElementById retrouve le paragraphe ; toggle alterne son affichage.
             document.getElementById('reponse').classList.add('visible');
         };
     </script>
