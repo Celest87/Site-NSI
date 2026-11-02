@@ -1,0 +1,154 @@
+/*STYLE GENERAL
+Utilisee par les deux pages HTML.*/
+body {
+    /* Largeur maximale du texte pour eviter les lignes trop longues. */
+    max-width: 900px;
+    /* 40px en haut/bas ; auto centre la page horizontalement. */
+    margin: 40px auto;
+    /* Espace entre le bord de la page et son contenu. */
+    padding: 20px;
+    /* Police du texte principal et hauteurs de ligne. */
+    font: 16px/1.6 Arial, sans-serif;
+    /* Couleur generale du texte, choisie pour contraster avec le fond. */
+    color: #eaf7ff;
+    /* Plusieurs fonds sont superposes : halos colores puis degrade sombre. */
+    background:
+        radial-gradient(circle at 20% 20%, rgba(86, 190, 255, 0.5), transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(85, 255, 196, 0.42), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(123, 92, 255, 0.38), transparent 45%),
+        linear-gradient(135deg, #071018, #0d1c2d, #111827);
+}
+
+/* STYLE DES IMAGES */
+img {
+    /* Une image ne peut pas depasser la largeur disponible. */
+    max-width: 100%;
+}
+
+
+h1 {
+    /* Centre horizontalement le titre principal de chaque page. */
+    text-align: center;
+    /* Rend le titre plus epais que le texte normal. */
+    font-weight: 700;
+}
+
+.illustration {
+    /* Affiche l'image comme un bloc pour pouvoir la centrer. */
+    display: block;
+    /* Ajoute de l'espace et centre l'image horizontalement. */
+    margin: 20px auto;
+    /* Arrondit les coins de l'image principale. */
+    border-radius: 12px;
+}
+
+#maison {
+    /* Place l'icone independamment du texte de la page. */
+    position: fixed;
+    /* Ecarte l'icone du haut de la fenetre. */
+    top: 20px;
+    /* Ecarte l'icone du bord gauche de la fenetre. */
+    left: 20px;
+    /* Garde l'icone de retour petite. */
+    width: 42px;
+    /* Arrondit les coins de l'icone. */
+    border-radius: 8px;
+}
+
+/* BLOCS DE CONTENU */
+.liste,
+.conclu_sources,
+.conclusion,
+.bloc {
+    /* Espacement autour de chaque bloc. */
+    margin: 18px 0px;
+    /* Espacement entre le bord du bloc et son texte. */
+    padding: 30px;
+    /* Fond sombre legerement transparent pour laisser voir les couleurs dessous. */
+    background: rgba(14, 24, 35, 0.8);
+    /* Coins arrondis. */
+    border-radius: 10px;
+}
+
+/* LIENS ET BOUTON */
+a,
+.term {
+    /* Couleur cyan pour reperer les liens et le terme interactif. */
+    color: #8fe8ff;
+}
+
+a {
+    /* Retire le soulignement par defaut des liens. */
+    text-decoration: none;
+}
+
+a:hover {
+    /* Eclaircit un lien lorsque le pointeur passe dessus. */
+    color: #fff;
+}
+
+button {
+    /* Espace interieur pour rendre le bouton plus facile a cliquer. */
+    padding: 8px 12px;
+    /* Couleur claire du texte du bouton. */
+    color: #eaf7ff;
+    /* Fond bleu du bouton. */
+    background: #245b78;
+    /* Coins arrondis du bouton. */
+    border-radius: 6px;
+    /* Signale que le bouton est interactif. */
+    cursor: pointer;
+}
+
+button:hover {
+    /* Fond un peu plus clair pour confirmer le survol du bouton. */
+    background: #347a9e;
+}
+
+/* TABLEAU */
+table {
+    /* Le tableau utilise toute la largeur du contenu. */
+    width: 100%;
+    /* Ajoute un espace au-dessus et en dessous du tableau. */
+    margin: 18px 0;
+    /* Fusionne les bordures des cellules voisines. */
+    border-collapse: collapse;
+}
+
+th,
+td {
+    /* Espace entre le texte et les bords de chaque cellule. */
+    padding: 10px;
+}
+
+th {
+    /* Centre le texte des titres de colonnes. */
+    text-align: center;
+    /* Fond plus fonce pour distinguer l'entete du tableau. */
+    background: rgba(14, 24, 35, 0.9);
+}
+
+/* REPONSE A LA DEVINETTE ET DEFINITION AU SURVOL */
+.cache,
+.def {
+    /* Masque ces textes tant que l'interaction n'a pas eu lieu. */
+    display: none;
+}
+
+.cache.visible,
+.term:hover .def {
+    /* Montre la reponse au clic ou la definition pendant le survol. */
+    display: block;
+}
+
+.term {
+    /* Met en evidence le mot qui est defini. */
+    font-weight: bold;
+}
+
+.def {
+    /* Ajoute de l'espace autour du texte de la definition. */
+    padding: 8px;
+    /* Arrondit les coins de l'encadre de definition. */
+    border-radius: 6px;
+}
