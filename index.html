@@ -31,11 +31,17 @@
 
     <!-- ul cree une liste a puces ; chaque li correspond a une puce. -->
     <ul class="liste">
-        <li>Automation des tâches répétitives</li>
+        <li>Automatisation des tâches répétitives</li>
         <li>Analyse rapide des données</li>
         <li>Evolution des compétences informatiques</li>
     </ul>
-
+    <h2>Differents modèles d'IA disponibles</h2>
+    <ol class="liste">
+        <li>Chat GPT</li>
+        <li>Gemini</li>
+        <li>Claude</li>
+        <li>Grok</li> 
+    </ol>
     <!-- Le lien avec #details fait défiler la page jusqu'à l'élément qui porte cet id. -->
     <p><a href="#details">Voir les détails</a></p>
 
@@ -81,7 +87,7 @@
             // classList.toggle ajoute « visible » si elle manque, et la retire si elle est déjà présente.
             // Le CSS associe display:none à l'état caché et display:block à l'état visible.
             // getElementById retrouve le paragraphe ; toggle alterne son affichage.
-            document.getElementById('reponse').classList.add('visible');
+            document.getElementById('reponse').classList.toggle('visible');
         };
     </script>
 </body>

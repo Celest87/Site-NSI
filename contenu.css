@@ -7,7 +7,7 @@ body {
     margin: 40px auto;
     /* Espace entre le bord de la page et son contenu. */
     padding: 20px;
-    /* Taille, hauteur de ligne et police du texte principal. */
+    /* Police du texte principal et hauteurs de ligne. */
     font: 16px/1.6 Arial, sans-serif;
     /* Couleur generale du texte, choisie pour contraster avec le fond. */
     color: #eaf7ff;
@@ -25,10 +25,6 @@ img {
     max-width: 100%;
 }
 
-/* La video se reduit a la largeur de l'ecran sur les petits appareils. */
-iframe {
-    max-width: 100%;
-}
 
 h1 {
     /* Centre horizontalement le titre principal de chaque page. */
@@ -67,7 +63,7 @@ h1 {
     /* Espacement autour de chaque bloc. */
     margin: 18px 0px;
     /* Espacement entre le bord du bloc et son texte. */
-    padding: 15px;
+    padding: 30px;
     /* Fond sombre legerement transparent pour laisser voir les couleurs dessous. */
     background: rgba(14, 24, 35, 0.8);
     /* Coins arrondis. */
