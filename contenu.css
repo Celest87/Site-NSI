@@ -149,8 +149,6 @@ th {
 .def {
     /* Ajoute de l'espace autour du texte de la definition. */
     padding: 8px;
-    /* Fond fonce et presque opaque pour assurer la lisibilite. */
-    background: rgba(14, 24, 35, 0.95);
     /* Arrondit les coins de l'encadre de definition. */
     border-radius: 6px;
 }
